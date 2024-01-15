@@ -1,0 +1,8 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+//Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+//Font
+@import 'node_modules/@fontsource-variable/roboto/index.css';
