@@ -10,10 +10,10 @@ export default {
 
 <template>
   <div class="container-fluid">
-    <div class="container d-flex flex-row justify-content-between p-3">
+    <div class="container d-flex flex-row justify-content-between py-2">
       <div>
-        <span class="wishlist pe-3"> wishlist(0)</span>
-        <span class="help ps-3">Need Help?</span>
+        <span class="wishlist pe-3 fs-6"> wishlist(0)</span>
+        <span class="help ps-3 fs-6">Need Help?</span>
       </div>
       <div class="call">Call 24/7 . 800-8754-987</div>
     </div>
