@@ -44,7 +44,7 @@ export default {
 .jumbo-info{
             position: absolute;
             top: 25%;
-            left: 25%;
+            left: 10%;
             z-index: 2;
 
 
