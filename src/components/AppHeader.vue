@@ -24,6 +24,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use 'src/styles/partials/_variables.scss' as *;
+@use 'src/styles/partials/_mixins.scss' as *;
 .container-fluid {
   border-bottom: solid #392d47 1px;
   background-color: #1d1427;
