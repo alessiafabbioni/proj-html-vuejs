@@ -19,13 +19,21 @@ export default {
 </script>
 
 <template>
-<Jumbo/>
-<AppStore/>
-<People/>
-<Blog/>
+    <div id="app-home">
+        <Jumbo/>
+        <AppStore/>
+        <People/>
+        <Blog/>
+    </div>
+
 
 </template>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+@use '../styles/partials/variables.scss' as *;
+@use '../styles/partials/mixins.scss' as *;
 
+#app-home {
+    background-image: url('public/img/body-bg.jpg');
+}
 </style>

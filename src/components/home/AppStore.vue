@@ -6,11 +6,13 @@ export default {
 </script>
 
 <template>
-    <div>
-        
-    </div>
+    <section>
+
+    </section>
 </template>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+@use 'src/styles/partials/_variables.scss' as *;
+@use 'src/styles/partials/_mixins.scss' as *;
 
 </style>
