@@ -4,6 +4,7 @@ import AppStore from '../components/home/AppStore.vue';
 import Blog from '../components/home/Blog.vue';
 import Jumbo from '../components/home/Jumbo.vue';
 import People from '../components/home/People.vue';
+import Icons from '../components/home/Icons.vue';
 
 
 export default {
@@ -12,7 +13,8 @@ export default {
         Jumbo,
         AppStore,
         People,
-        Blog 
+        Blog,
+        Icons 
     }
 }
 
@@ -21,6 +23,7 @@ export default {
 <template>
     <div id="app-home">
         <Jumbo/>
+        <Icons/>
         <AppStore/>
         <People/>
         <Blog/>
