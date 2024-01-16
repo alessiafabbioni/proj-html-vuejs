@@ -1,14 +1,9 @@
 <script>
 export default {
-    name: 'AppFooter'
+  name: 'AppFooter'
 }
-
 </script>
 
-<template>
+<template></template>
 
-</template>
-
-<style lang="sass" scoped>
-
-</style>
+<style lang="sass" scoped></style>
