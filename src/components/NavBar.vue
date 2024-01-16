@@ -53,14 +53,14 @@ export default {
     <div class="container elementi-navbar p-3">
       <div class="row">
         <div class="col-lg-2 logo justify-content-center">
-          <img src="/img/mob-logo.png" alt="" />
+          <router-link :to="{ name: 'about' }" class="nav-link">
+            <img src="/img/mob-logo.png" alt="" />
+          </router-link>
         </div>
         <div class="lista-nav col-lg-6">
           <ul class="d-flex">
             <li v-for="(element, i) in pages" :key="i" class="">
-              <router-link :to="{ name: 'about' }" class="nav-link">
-                {{ element.page }}
-              </router-link>
+              {{ element.page }}
             </li>
           </ul>
         </div>
