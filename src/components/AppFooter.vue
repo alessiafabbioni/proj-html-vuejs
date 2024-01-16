@@ -6,7 +6,7 @@ export default {
 
 <template>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="info">
 
             <div class="col-address">
@@ -67,88 +67,88 @@ export default {
 @use '../styles/partials/mixins' as *;
 @use '../styles/partials/variables' as *;
 
-.container {
+.container-fluid {
     width: 100%;
-    height: 500px;
+    height: 480px;
     color: #bfbfbf;
-    padding: 0 80px;
     background-image: url(../../public/img/footer-bg.png);
     background-size: cover;
     color: white;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    .info {
-        width: 100%;
-        display: flex;
-        // padding: 0 80px;
-        padding-top: 150px;
+    
+        .info {
+            width: 100%;
+            display: flex;
+            padding-top: 100px;
 
-        h5 {
-                color: white;
-                font-size: 18px;
-                padding-bottom: 20px;
+            h5 {
+                    color: white;
+                    font-size: 18px;
+                    padding-bottom: 20px;
+                }
+
+            div {
+                padding-bottom: 5px;
             }
 
-        div {
-            padding-bottom: 5px;
-        }
-
-        .col-address {
-            width: 26%;
-            padding: 0 15px 0;
-            color: #bfbfbf;
-            font-size: 14px;
-
-            i {
-                padding-right: 10px;
-                color:  #f9aa01;
-            }
-        }
-       
-        .col {
-            padding: 0 15px 0;
-            color: #bfbfbf;
-            font-size: 14px;
-
-            input {
-                width: 87%;
-                margin-top: 15px;
-            }
-
-           .social-icon {
+            .col-address {
+                width: 26%;
+                padding: 0 15px 0;
+                color: #bfbfbf;
+                font-size: 16px;
 
                 i {
-                    padding-right: 20px;
-                    font-size: 17px;
-                    padding-top: 20px;
-                    color: white;
+                    padding-right: 10px;
+                    color:  #f9aa01;
                 }
-           }
-        }
-    }
-
-   .footer-bottom {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        border-top: 1px solid #515772;
-        padding: 20px;
-
-        .copyright {
-            color: #bfbfbf;
-            font-size: 14px;
-        }
-
-        .pay-card {
-            width: 180px;
-            background-image: url(../../public/img/payments.png);
+            }
         
-            background-position-y:  50%;
-        }
-   }
-   
+            .col {
+                padding: 0 15px 0;
+                color: #bfbfbf;
+                font-size: 16px;
 
+                input {
+                    width: 87%;
+                    margin-top: 15px;
+                }
+
+            .social-icon {
+
+                    i {
+                        padding-right: 20px;
+                        font-size: 17px;
+                        padding-top: 20px;
+                        color: white;
+                    }
+            }
+            }
+        }
+
+    .footer-bottom {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #515772;
+            padding: 20px;
+
+            .copyright {
+                color: #bfbfbf;
+                font-size: 14px;
+            }
+
+            .pay-card {
+                width: 180px;
+                background-image: url(../../public/img/payments.png);
+            
+                background-position-y:  50%;
+            }
+    }
+    
 }
+
 </style>
