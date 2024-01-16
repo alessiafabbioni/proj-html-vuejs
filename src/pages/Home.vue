@@ -1,12 +1,29 @@
 <script>
+//import child components
+import AppStore from '../components/home/AppStore.vue';
+import Blog from '../components/home/Blog.vue';
+import Jumbo from '../components/home/Jumbo.vue';
+import People from '../components/home/People.vue';
+
+
 export default {
-    name: 'Home'
+    name: 'Home',
+    components: { 
+        Jumbo,
+        AppStore,
+        People,
+        Blog 
+    }
 }
 
 </script>
 
 <template>
-<h1>HOOOOOME</h1>
+<Jumbo/>
+<AppStore/>
+<People/>
+<Blog/>
+
 </template>
 
 <style lang="sass" scoped>
