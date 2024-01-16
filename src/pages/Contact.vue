@@ -65,7 +65,37 @@ export default {
             <!-- sezione di altre info -->
             <div class="other-info">
                 <div class="title-oi"> Codezeel Web Service Pvt. Ltd. </div>
-                <div class="descr-oi"> We possess within us two minds. So far I have written only of the conscious mind. I would now like to introduce you to your second mind, the hidden and mysterious subconscious. Our subconscious mind contains such power and complexity that it literally staggers the imagination. </div>
+                <div class="descr"> We possess within us two minds. So far I have written only of the conscious mind. I would now like to introduce you to your second mind, the hidden and mysterious subconscious. Our subconscious mind contains such power and complexity that it literally staggers the imagination. </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="details">
+                        <div class="icon"> <i class="fa-solid fa-location-dot"></i> </div>
+                        <div class="content">
+                            <h5> Address: </h5>
+                            <span> 60 29th Street San Francisco, CA 94110 507-Union Trade Center, United States of America </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="details">
+                        <div class="icon"> <i class="fa-solid fa-phone"></i> </div>
+                        <div class="content">
+                            <h5> Phone Numbers: </h5>
+                            <span> +91 1234567898 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="details">
+                        <div class="icon"> <i class="fa-solid fa-envelope"></i> </div>
+                        <div class="content">
+                            <h5> Email: </h5>
+                            <span> demo@example.com </span>
+                            <p> Monday - Friday 10 AM - 8 PM </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -107,7 +137,7 @@ export default {
     width: 100%;
     padding: 10px;
     background-color: #170f1f;
-    margin: 50px 10px;
+    margin: 50px 0px;
 
     .title-form {
     width: 100%;
@@ -146,18 +176,59 @@ export default {
         text-decoration: none;
     }
 
-    .title-oi {
-        font-size: 14px;
-    }
-
-    .descr-oi {
-        font-size: 10px;
-        color: #878787;
-       
-    }
+   }
    
 
-}
+   .other-info {
+     
+        .title-oi {
+            font-size: 14px;
+            padding-bottom: 10px;
+        }
+
+        .descr {
+            font-size: 14px;
+            color: #878787;
+        }
+   }
+
+   .details {
+    display: flex;
+    height: 190px;
+    border: 1px solid #342c3d;
+    margin: 30px 0 50px;
+
+        .icon {
+            width: 30%;
+            background-color: #170f1f;
+            border: 1px solid #342c3d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:  #f9aa01;
+
+        }
+
+        .content {
+            width: 70%;
+            font-size: 14px;
+            padding: 15px;
+
+            h5 {
+                font-size: 18px;
+            }
+
+            span {
+                color: #878787;
+            }
+
+            p {
+                font-size: 13px ;
+                color: #888888;
+            }
+        }
+   }
+
 
 
 
