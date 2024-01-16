@@ -8,36 +8,34 @@ export default {
 <template>
     <section class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="icon-card">
                     <div class="icon-container icon1"></div>
                     <span class="icon-title">Free Delivery</span>
                     <span class="icon-info">Free Shipping on all orders</span>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="icon-card">
                     <div class="icon-container icon2"></div>
                     <span class="icon-title">Money Return</span>
                     <span class="icon-info">Back Guarantee in 7 days</span>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="icon-card">
                     <div class="icon-container icon3"></div>
                     <span class="icon-title">Member Discount</span>
                     <span class="icon-info">On every order over $130.00</span>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="icon-card">
                     <div class="icon-container icon4"></div>
                     <span class="icon-title">Return Policy</span>
                     <span class="icon-info">Support 24 hours a day</span>
                 </div>
             </div>
-            
-
         </div>
 
     </section>
@@ -92,6 +90,7 @@ export default {
 .icon-info{
     color: #A6A6A6;
 }
+
 
 
 </style>
