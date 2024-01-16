@@ -53,7 +53,10 @@ export default {
         <div class="footer-bottom">
                 <div class="copyright"> Copyright © 2024 Codezeel </div>
                 <div class="pay-card">
-                    
+                    <div class="card1"></div>
+                    <div class="card2"></div>
+                    <div class="card3"></div>
+                    <div class="card4"></div>
                 </div>
         </div>
     </div>
