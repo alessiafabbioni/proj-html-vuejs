@@ -58,7 +58,9 @@ export default {
         <div class="lista-nav col-lg-6">
           <ul class="d-flex">
             <li v-for="(element, i) in pages" :key="i" class="">
-              {{ element.page }}
+              <router-link :to="{ name: 'about' }" class="nav-link">
+                {{ element.page }}
+              </router-link>
             </li>
           </ul>
         </div>
@@ -77,6 +79,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use 'src/styles/partials/_variables.scss' as *;
+@use 'src/styles/partials/_mixins.scss' as *;
 .container-fluid {
   border-bottom: solid #241b2e 1px;
   background-color: #1d1427;
