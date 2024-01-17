@@ -15,7 +15,7 @@ export default {
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active people-carousel">
-                    <img src="//capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2019/11/t5-1-100x100_left.jpg" class="d-block w-100" alt="person image">
+                    <img src="/Users/alessiafabbioni/Desktop/boolean/proj-html-vuejs/public/img/parallax.jpg" class="d-block w-100" alt="person image">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -28,7 +28,7 @@ export default {
             </button>
             <div class="container">
                 <div class="people-info">
-                    <img src="/public/img/t5-1-100x100_left.jpg" alt="quote">
+                    <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2019/11/t5-1-100x100_left.jpg" alt="quote">
                     <div class="row">
                         <h5 class="col justify-content-end">Maria Rossi</h5>
                         <h5 class="col web-des justify-content-start">(Web Designer)</h5>
