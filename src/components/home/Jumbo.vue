@@ -30,11 +30,13 @@ export default {
                 <span class="visually-hidden">Next</span>
             </button>
 
-            <div class="jumbo-info">
+            <div class="container">
+                <div class="jumbo-info">
                     <h4>Upcoming Stock</h4>
                     <h1>Resident Evil 3 <br>
                         Remake</h1>
                     <button type="button" class="btn btn-light ms-button">Shop Now</button>
+                </div>
             </div>
         </div>
 
