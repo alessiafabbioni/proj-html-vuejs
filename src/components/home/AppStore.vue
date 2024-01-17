@@ -1,6 +1,152 @@
 <script>
 export default {
-    name: 'AppStore'
+    name: 'AppStore',
+    data(){
+        return {
+            products: [
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/01.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/02.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/03.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/04.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "new arrival",
+                    image: "../../../public/img/05.jpg"
+                },{
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/06.jpg"
+                },{
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/07.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/08.jpg"
+                },{
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "new arrival",
+                    image: "../../../public/img/09.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/10.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/11.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/12.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/13.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/14.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/15.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "new arrival",
+                    image: "../../../public/img/16.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "featured",
+                    image: "../../../public/img/17.jpg"
+                },
+                {
+                    name: "Gaming Headset",
+                    price: 89.99,
+                    discounted: 50.00,
+                    rating: 4.5,
+                    tag: "new arrival",
+                    image: "../../../public/img/18.jpg"
+                },
+            ]
+        }
+    }
 }
 
 </script>
@@ -70,8 +216,8 @@ export default {
             <span class="title-divider"></span>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
+            <div v-for="product in products" :key="i" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                <img class=" card-promo " :src="product.image" :alt="product.name">
                 <div class="product-info">
                     <div class="rating">
                         <span class="fa fa-star checked"></span>
@@ -81,56 +227,8 @@ export default {
                         <span class="fa fa-star"></span>
                     </div>
                     <div>
-                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
-                        <span class="prod-price">$100.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
-                <div class="product-info">
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <div>
-                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
-                        <span class="prod-price">$100.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
-                <div class="product-info">
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <div>
-                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
-                        <span class="prod-price">$100.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
-                <div class="product-info">
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <div>
-                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
-                        <span class="prod-price">$100.00</span>
+                        <h5 class="prod-title"> {{ product.name }}</h5>
+                        <span class="prod-price"> {{ product.price }}</span>
                     </div>
                 </div>
             </div>
