@@ -82,6 +82,7 @@ export default {
             width: 30px;
             height: 30px;
             border-radius: 100%;
+            display: none;
             
 
             .prev {
@@ -93,7 +94,6 @@ export default {
                 top: 50%;
                 bottom: 50%;
                 transform: translate(-50%,-50%);
-                display: none;
             }
 
             .next {
@@ -106,12 +106,15 @@ export default {
                 bottom: 50%;
                 top: 50%;
                 transform: translate(-50%,-50%);
-                display: none;
             }
         }
     }
 }
 
+.container:hover .arrow  {
+    cursor: pointer;
+    display: block;
+}
 
 </style>
 
