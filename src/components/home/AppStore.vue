@@ -70,8 +70,8 @@ export default {
             <span class="title-divider"></span>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
-                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
                 <div class="product-info">
                     <div class="rating">
                         <span class="fa fa-star checked"></span>
@@ -86,8 +86,8 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
-                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
                 <div class="product-info">
                     <div class="rating">
                         <span class="fa fa-star checked"></span>
@@ -102,8 +102,8 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
-                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
                 <div class="product-info">
                     <div class="rating">
                         <span class="fa fa-star checked"></span>
@@ -118,8 +118,8 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
-                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
                 <div class="product-info">
                     <div class="rating">
                         <span class="fa fa-star checked"></span>
@@ -183,8 +183,8 @@ export default {
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
-                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
                 <div class="product-info">
                     <div class="rating">
                         <span class="fa fa-star checked"></span>
@@ -199,8 +199,8 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
-                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
                 <div class="product-info">
                     <div class="rating">
                         <span class="fa fa-star checked"></span>
@@ -215,8 +215,8 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
-                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
                 <div class="product-info">
                     <div class="rating">
                         <span class="fa fa-star checked"></span>
@@ -231,8 +231,8 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
-                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
                 <div class="product-info">
                     <div class="rating">
                         <span class="fa fa-star checked"></span>
@@ -274,6 +274,7 @@ export default {
     object-fit: cover;
     position: relative;
     overflow: hidden;
+    width: 100%;
 
 
 }
