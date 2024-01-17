@@ -93,6 +93,7 @@ export default {
                 top: 50%;
                 bottom: 50%;
                 transform: translate(-50%,-50%);
+                display: none;
             }
 
             .next {
@@ -105,15 +106,12 @@ export default {
                 bottom: 50%;
                 top: 50%;
                 transform: translate(-50%,-50%);
+                display: none;
             }
         }
     }
 }
 
-.prev:hover + .arrow{
-                cursor: pointer;
-                display: block;
-            }
 
 </style>
 
