@@ -40,7 +40,7 @@ export default {
                     <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/category-image-02-446x550_t.jpg" alt="Batman">
                     <div class="special-info">
                         <h4>Batman</h4>
-                        <a href="/">Shop Now</a>
+                        <a href="/" class="link-offset-3">Shop Now</a>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@ export default {
                     <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/category-image-01-446x550_t.jpg" alt="bayonetta">
                     <div class="special-info">
                         <h4>Bayonetta</h4>
-                        <a href="/">Shop Now</a>
+                        <a href="/" class="link-offset-3">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ export default {
                     <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/category-image-03-446x550_t.jpg" alt="dark souls">
                     <div class="special-info">
                         <h4>Dark Souls</h4>
-                        <a href="/">Shop Now</a>
+                        <a href="/" class="link-offset-3">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -258,15 +258,6 @@ export default {
 <style lang="scss" scoped>
 @use 'src/styles/partials/_variables.scss' as *;
 @use 'src/styles/partials/_mixins.scss' as *;
-
-
-.home-titles {
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    margin: 30px;
-    
-}
 
 
 
