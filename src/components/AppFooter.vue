@@ -62,6 +62,8 @@ export default {
                             <div class="card5"></div>
                         </div>
                 </div>
+
+                
             
         </div>
     </div>
@@ -121,6 +123,11 @@ export default {
                 padding: 0 15px 0;
                 color: #bfbfbf;
                 font-size: 16px;
+
+                div:hover {
+                    cursor: pointer;
+                    color: #f9aa01;
+                }
 
                 input {
                     width: 87%;
@@ -195,5 +202,7 @@ export default {
         background-position: 0% 80%;
     }
 }
+
+
 </style>
 
