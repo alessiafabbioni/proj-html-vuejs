@@ -80,24 +80,37 @@ export default {
       .prev {
         width: 30px;
         height: 30px;
-        background-image: url(../../../public/img/arrow.png);
+        background-image: url(../../../public/img/arrow.png) ;
         background-position: 0% 100%;
         position: absolute;
         top: 50%;
         bottom: 50%;
         transform: translate(-50%, -50%);
+        transition: all 300ms ease;
+
+        &:hover {
+            background-image: url(../../../public/img/arrow.png);
+            background-position: 0% 0%;
+        }
       }
 
       .next {
         width: 30px;
         height: 30px;
-        background-image: url(../../../public/img/arrow.png);
+        background-image: url(../../../public/img/arrow.png) ;
         background-position: -59% 100%;
         position: absolute;
         right: 0;
         bottom: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        transition: all 300ms ease;
+
+        &:hover {
+            background-image: url(../../../public/img/arrow.png) ;
+            background-position: 100% 0%;
+    
+        }
       }
     }
   }
@@ -107,13 +120,22 @@ export default {
   cursor: pointer;
   display: block;
 }
+
+
+
+
 </style>
 
 <!-- freccia che guarda a sinistra bianca -->
-<!-- background-position: 0% 100%;  -->
+<!-- background-position: 0% 100%;  
 
-<!-- freccia che guarda a destra bianca -->
+freccia che guarda a sinistra gialla
+background-position: 0% 0%;
+
+
+freccia che guarda a destra bianca -->
 <!-- background-position: -59% 100%;  -->
 
 <!-- freccia che guarda a destra gialla
       background-position: 100% 0%; -->
+
