@@ -1,4 +1,7 @@
 <script>
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
+
 export default {
     name: 'AppStore',
     data(){
@@ -144,10 +147,28 @@ export default {
                     tag: "new arrival",
                     image: "../../../public/img/18.jpg"
                 },
-            ]
+            ],
+            currentIndex: 0,
         }
-    }
-}
+    },
+    computed: {
+        displayedProducts() {
+        return this.products.slice(this.currentIndex, this.currentIndex + 4);
+        },
+    },
+    methods: {
+        nextSlide() {
+        if (this.currentIndex + 4 < this.products.length) {
+        this.currentIndex += 4;
+        }
+    },
+    prevSlide() {
+        if (this.currentIndex > 0) {
+        this.currentIndex -= 4;
+        }
+    },
+},
+};
 
 </script>
 
@@ -216,7 +237,7 @@ export default {
             <span class="title-divider"></span>
         </div>
         <div class="row">
-            <div v-for="product in products" :key="i" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+            <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
                 <img class=" card-promo " :src="product.image" :alt="product.name">
                 <div class="product-info">
                     <div class="rating">
@@ -233,6 +254,11 @@ export default {
                 </div>
             </div>
         </div>
+        <div class="navigation-buttons">
+            <button @click="prevSlide" :disabled="currentIndex === 0">Previous</button>
+            <button @click="nextSlide" :disabled="currentIndex + 4 >= products.length">Next</button>
+        </div>
+
         <!-- Second section with the 2 images -->
         <div class="row mt-7">
             <div class="col-lg-6 col-md-12 col-sm-12 mb-5 column-gap-5">
