@@ -87,6 +87,11 @@ export default {
         bottom: 50%;
         transform: translate(-50%, -50%);
         transition: all 300ms ease;
+
+        &:hover {
+            background-image: url(../../../public/img/arrow.png);
+            background-position: 0% 0%;
+        }
       }
 
       .next {
@@ -100,6 +105,12 @@ export default {
         top: 50%;
         transform: translate(-50%, -50%);
         transition: all 300ms ease;
+
+        &:hover {
+            background-image: url(../../../public/img/arrow.png) ;
+            background-position: 100% 0%;
+    
+        }
       }
     }
   }
@@ -110,17 +121,9 @@ export default {
   display: block;
 }
 
-.prev:hover {
-    background-image: url(../../../public/img/arrow.png);
-    background-position: 0% 0%;
-}
 
-.next:hover {
-    cursor: pointer;
-    background-image: url(../../../public/img/arrow.png) ;
-    background-position: 100% 0%;
-    
-}
+
+
 </style>
 
 <!-- freccia che guarda a sinistra bianca -->
