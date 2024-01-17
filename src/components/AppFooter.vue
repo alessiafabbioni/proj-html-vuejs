@@ -124,6 +124,11 @@ export default {
                 color: #bfbfbf;
                 font-size: 16px;
 
+                div:hover {
+                    cursor: pointer;
+                    color: #f9aa01;
+                }
+
                 input {
                     width: 87%;
                     margin-top: 15px;
@@ -197,5 +202,7 @@ export default {
         background-position: 0% 80%;
     }
 }
+
+
 </style>
 

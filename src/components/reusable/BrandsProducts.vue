@@ -94,7 +94,7 @@ export default {
                 bottom: 50%;
                 transform: translate(-50%,-50%);
                 cursor: pointer;
-                // visibility: hidden;
+               display: none;
 
                 
                     
@@ -118,6 +118,10 @@ export default {
     }
 }
 
+.prev:hover + .arrow{
+                cursor: pointer;
+                display: block;
+            }
 
 </style>
 
