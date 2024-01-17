@@ -30,8 +30,10 @@ export default {
                 <div class="people-info">
                     <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2019/11/t5-1-100x100_left.jpg" alt="quote">
                     <div class="row">
-                        <h5 class="col justify-content-end">Maria Rossi</h5>
-                        <h5 class="col web-des justify-content-start">(Web Designer)</h5>
+                        <div class="col-4 offset-4 d-flex flex-row">
+                            <h6 class="col justify-content-end">Maria Rossi</h6>
+                            <h6 class="col web-des justify-content-start">(Web Designer)</h6>
+                        </div>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur laudantium ad amet commodi est, hic soluta voluptates vel praesentium minus molestias numquam, delectus quis enim et neque nisi molestiae id?</p>
                 </div>
@@ -58,7 +60,7 @@ export default {
         left: 35%;
         max-width: 30%;
 
-        h5{
+        h6{
             color:white;
             padding: 10px 0;
         }
