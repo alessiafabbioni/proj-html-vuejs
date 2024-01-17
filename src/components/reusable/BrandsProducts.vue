@@ -56,55 +56,57 @@ export default {
   height: 270px;
   background-image: url(../../public/img/body-bg.jpg);
 
-    .container {
-        width: 100%;
-        height: 100%;
-        border-top: 1px solid #353a4ea7;
-        position: relative;
+  .container {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #353a4ea7;
+    position: relative;
 
-        .brands-products {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 50px;
-        }
+    .brands-products {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 50px;
+    }
 
-        .arrow {
-            width: 30px;
-            height: 30px;
-            border-radius: 100%;
+    .arrow {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      display: none;
 
+      .prev {
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../public/img/arrow.png);
+        background-position: 0% 100%;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        transform: translate(-50%, -50%);
+      }
 
-            .prev {
-                width: 30px;
-                height: 30px;
-                background-image: url(../../../public/img/arrow.png);
-                background-position: 0% 100%;
-                position: absolute;
-                top: 50%;
-                bottom: 50%;
-                transform: translate(-50%,-50%);
-                display: none;
-            }
-
-            .next {
-                width: 30px;
-                height: 30px;
-                background-image: url(../../../public/img/arrow.png);
-                background-position: -59% 100%;
-                position: absolute;
-                right: 0;
-                bottom: 50%;
-                top: 50%;
-                transform: translate(-50%,-50%);
-                display: none;
-            }
-        }
+      .next {
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../public/img/arrow.png);
+        background-position: -59% 100%;
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
+}
 
+.container:hover .arrow {
+  cursor: pointer;
+  display: block;
+}
 </style>
 
 <!-- freccia che guarda a sinistra bianca -->
