@@ -215,15 +215,6 @@ export default {
       color: #f9aa01;
     }
   }
-  // .lets-talk {
-  //   background-color: #23172f;
-  //   text-align: center;
-  //   padding: 10px;
-  // }
-  // .lets-talk:hover {
-  //   cursor: pointer;
-  //   color: #f9aa01;
-  // }
   .item {
     float: left;
     position: relative;
