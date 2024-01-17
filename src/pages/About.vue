@@ -65,8 +65,7 @@ export default {
 
 <template>
   <section class="container-fluid pt-2" id="About-us">
-    <!--  WHY CHOOSE US -->
-    <div class="container why-us">
+    <div class="container">
       <div class="row bread-crumb">
         <div class="col-lg-6">
           <nav>
@@ -84,6 +83,7 @@ export default {
           <span>About Us</span>
         </div>
       </div>
+      <!-- slider -->
       <div class="row">
         <div class="col-lg-6">
           <div class="slider-wrapper" tabindex="0">
@@ -99,23 +99,34 @@ export default {
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <h5>Why choose us</h5>
+        <!--  WHY CHOOSE US -->
+        <div class="col-lg-6 why-us">
+          <h5>Why Choose Us</h5>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-            velit! Dolorem, minima sapiente. Alias omnis in nesciunt, molestias
-            optio voluptatibus aliquam labore, error officiis, corrupti commodi
-            eaque a nemo ex? Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Corrupti qui quo nemo. Voluptatibus, aliquam similique cumque
-            alias at, doloremque maiores ipsum obcaecati quos sit, eligendi
-            animi magnam nisi rerum magni!
+            Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+            dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+            tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
+            ac, enim. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
+            augue.consequat vitae, eleifend ac, enim. Quisque rutrum. Aenean
+            imperdiet.
           </p>
-          <ul>
-            <li>Praesent sed ex vel mauris ele.</li>
-            <li>Nam vel luctus nulla, eget interdum metus</li>
-            <li>Temporibus autem</li>
-            <li>Excepteur sint occaecat</li>
-          </ul>
+          <div class="d-flex flex-column">
+            <div class="list-element">
+              <i class="fa-solid fa-circle"></i>
+              <span>Praesent sed ex vel mauris ele</span>
+            </div>
+            <div class="list-element">
+              <i class="fa-solid fa-circle"></i>
+              <span>Nam vel luctus nulla, eget interdum metus</span>
+            </div>
+            <div class="list-element">
+              <i class="fa-solid fa-circle"></i> <span>Temporibus autem</span>
+            </div>
+            <div class="list-element">
+              <i class="fa-solid fa-circle"></i>
+              <span>Excepteur sint occaecat</span>
+            </div>
+          </div>
           <div class="lets-talk col-lg-3">Let's TALK</div>
         </div>
       </div>
@@ -155,15 +166,64 @@ export default {
   // height: 800px;
   padding-bottom: 30px;
   color: white;
-  .lets-talk {
-    background-color: #23172f;
-    text-align: center;
-    padding: 10px;
-  }
-  .lets-talk:hover {
-    cursor: pointer;
+  .nav-link:hover {
     color: #f9aa01;
   }
+  .why-us {
+    h5 {
+      position: relative;
+      padding-bottom: 15px;
+    }
+    h5::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 10%;
+      height: 1px;
+      background-color: #f9aa01;
+    }
+    p {
+      margin-top: 15px;
+      font-size: 15px;
+      color: #747276;
+    }
+    div {
+      color: #a59d95;
+      font-size: 15px;
+      font-weight: bold;
+      gap: 15px;
+      .list-element {
+        i {
+          color: #f9aa01;
+          margin-right: 10px;
+        }
+      }
+      .list-element:hover {
+        color: #f9aa01;
+        cursor: pointer;
+      }
+    }
+    .lets-talk {
+      background-color: #23172f;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+    }
+    .lets-talk:hover {
+      cursor: pointer;
+      color: #f9aa01;
+    }
+  }
+  // .lets-talk {
+  //   background-color: #23172f;
+  //   text-align: center;
+  //   padding: 10px;
+  // }
+  // .lets-talk:hover {
+  //   cursor: pointer;
+  //   color: #f9aa01;
+  // }
   .item {
     float: left;
     position: relative;
