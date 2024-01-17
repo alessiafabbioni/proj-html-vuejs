@@ -15,7 +15,7 @@ export default {
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active people-carousel">
-                    <img src="/Users/alessiafabbioni/Desktop/boolean/proj-html-vuejs/public/img/parallax.jpg" class="d-block w-100" alt="person image">
+                    <img src="/public/img/parallax.jpg" class="d-block w-100" alt="person image">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
