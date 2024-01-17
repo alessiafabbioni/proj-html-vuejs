@@ -1,12 +1,49 @@
 <script>
 export default {
-  name: 'About'
+  name: 'About',
+  data() {
+    return {
+      cards: [
+        {
+          title: 'Easy To Use',
+          text: 'We’ve put a lot of thought in giving you the best possible experience to make your job easier.',
+          icon: 'fa-solid fa-earth-europe'
+        },
+        {
+          title: 'Outstanding Support',
+          text: 'Modules comes fully documented with step by step instructions. access premium support forum.',
+          icon: 'fa-solid fa-comments'
+        },
+        {
+          title: 'Simply Beautiful',
+          text: 'Our themes are not just nicely coded, they are built to show your visitors how much you care for beauty and for design.',
+          icon: 'fa-regular fa-heart'
+        },
+        {
+          title: 'Careful Crafted',
+          text: 'Coded with WordPress best practices in mind, Modules will give you an amazing looking site easier.',
+          icon: 'fa-solid fa-cube'
+        },
+        {
+          title: '20+ Bulilder Module',
+          text: 'Create as many modules as you want. Personalize them and build with them your pages.',
+          icon: 'service-icon fa fa-th'
+        },
+        {
+          title: 'WP Video Training',
+          text: 'Enjoy a comprehensive collection of WordPress 101 video tutorials on our membership training area.',
+          icon: 'fa-regular fa-circle-play'
+        }
+      ]
+    }
+  }
 }
 </script>
 
 <template>
   <section class="container-fluid pt-2" id="About-us">
-    <div class="container">
+    <!--  WHY CHOOSE US -->
+    <div class="container why-us">
       <div class="row bread-crumb">
         <div class="col-lg-6">
           <nav>
@@ -91,6 +128,21 @@ export default {
               <li>Excepteur sint occaecat</li>
             </ul>
             <div class="lets-talk col-lg-3">Let's TALK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SEZIONE HISTORY -->
+    <div class="container history text-center mt-5">
+      <h2>Codezeel History</h2>
+      <div class="row">
+        <div class="col-lg-4" v-for="(card, i) in cards" :key="i">
+          <div class="cardz">
+            <div class="icon">
+              <i :class="card.icon"></i>
+            </div>
+            <span>{{ card.title }}</span>
+            <p>{{ card.text }}</p>
           </div>
         </div>
       </div>
