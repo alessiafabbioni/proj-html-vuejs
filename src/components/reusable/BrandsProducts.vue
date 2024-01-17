@@ -3,6 +3,7 @@ export default {
   name: 'BrandsProducts',
   data() {
     return {
+      activeImg: 0,
       brands: [
         {
           img: '../../../public/img/brand-01.png',
