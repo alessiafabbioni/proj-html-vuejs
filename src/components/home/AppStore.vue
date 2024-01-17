@@ -61,6 +61,76 @@ export default {
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="home-titles">
+            <h1>Our Products</h1>
+            <span class="title-divider"></span>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
+                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+                <div class="product-info">
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div>
+                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
+                        <span class="prod-price">$100.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
+                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+                <div class="product-info">
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div>
+                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
+                        <span class="prod-price">$100.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
+                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+                <div class="product-info">
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div>
+                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
+                        <span class="prod-price">$100.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5 card-promo ">
+                <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04-327x327.jpg" alt="Image container">
+                <div class="product-info">
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div>
+                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
+                        <span class="prod-price">$100.00</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -137,5 +207,31 @@ export default {
 }
 
 
+//products
 
+.product-info {
+    width: 100%;
+    background-color: #170F1F;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+}
+.checked {
+    color: #f8a900;
+}
+
+
+.prod-title{
+    color: white;
+    padding: 1rem;
+}
+
+.prod-price{
+    color: #f8a900;
+    font-weight: 500;
+    padding: 1rem;
+}
+
+.rating {
+    padding: 1rem;
+}
 </style>
