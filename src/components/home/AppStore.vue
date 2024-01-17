@@ -7,83 +7,86 @@ export default {
     data(){
         return {
             products: [
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/01.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/02.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/03.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/04.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "new arrival",
-                    image: "../../../public/img/05.jpg"
-                },{
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/06.jpg"
-                },{
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/07.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/08.jpg"
-                },{
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "new arrival",
-                    image: "../../../public/img/09.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/10.jpg"
-                },
+            {
+                name: "Wireless Mouse",
+                price: 45.99,
+                discounted: 22.50,
+                rating: 3.8,
+                tag: "sale",
+                image: "../../../public/img/01.jpg"
+            },
+            {
+                name: "Mechanical Keyboard",
+                price: 109.99,
+                discounted: 78.25,
+                rating: 4.1,
+                tag: "bestseller",
+                image: "../../../public/img/02.jpg"
+            },
+            {
+                name: "Gaming Monitor",
+                price: 279.99,
+                discounted: null,
+                rating: 2.9,
+                tag: "featured",
+                image: "../../../public/img/03.jpg"
+            },
+            {
+                name: "RGB Gaming Chair",
+                price: 199.99,
+                discounted: 85.60,
+                rating: 4.3,
+                tag: "new arrival",
+                image: "../../../public/img/04.jpg"
+            },
+            {
+                name: "Gaming Laptop",
+                price: 1299.99,
+                discounted: null,
+                rating: 4.7,
+                tag: "featured",
+                image: "../../../public/img/05.jpg"
+            },
+            {
+                name: "Gaming Mouse Pad",
+                price: 19.99,
+                discounted: null,
+                rating: 3.5,
+                tag: "sale",
+                image: "../../../public/img/06.jpg"
+            },
+            {
+                name: "Webcam with Microphone",
+                price: 64.99,
+                discounted: null,
+                rating: 4.0,
+                tag: "featured",
+                image: "../../../public/img/07.jpg"
+            },
+            {
+                name: "External Hard Drive",
+                price: 89.99,
+                discounted: 45.00,
+                rating: 4.5,
+                tag: "bestseller",
+                image: "../../../public/img/08.jpg"
+            },
+            {
+                name: "Gaming Desk",
+                price: 179.99,
+                discounted: 90.00,
+                rating: 4.6,
+                tag: "new arrival",
+                image: "../../../public/img/09.jpg"
+            },
+            {
+                name: "Wireless Gaming Controller",
+                price: 54.99,
+                discounted: 27.50,
+                rating: 4.2,
+                tag: "featured",
+                image: "../../../public/img/10.jpg"
+            },
                 {
                     name: "Gaming Headset",
                     price: 89.99,
@@ -158,17 +161,22 @@ export default {
     },
     methods: {
         nextSlide() {
-        if (this.currentIndex + 4 < this.products.length) {
-        this.currentIndex += 4;
-        }
-    },
+            if (this.currentIndex + 4 < this.products.length) {
+            this.currentIndex += 4;
+            }
+        },
     prevSlide() {
-        if (this.currentIndex > 0) {
-        this.currentIndex -= 4;
-        }
+            if (this.currentIndex > 0) {
+            this.currentIndex -= 4;
+            }
+        },
+    
+    getStarClass(index, rating) {
+        const roundedRating = Math.round(rating * 2) / 2; 
+        return index + 0.5 <= roundedRating ? 'checked' : '';
     },
-},
-};
+}
+}
 
 </script>
 
@@ -241,15 +249,18 @@ export default {
                 <img class=" card-promo " :src="product.image" :alt="product.name">
                 <div class="product-info">
                     <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        <span v-for="i in 5" :key="i" :class="['fa', 'fa-star', getStarClass(i, product.rating)]"></span>
                     </div>
                     <div>
                         <h5 class="prod-title"> {{ product.name }}</h5>
-                        <span class="prod-price"> {{ product.price }}</span>
+                        <div  v-if="product.discounted !== null">
+                            <span class="prod-price discounted">{{ product.price }}</span>
+                            <span class="prod-discounted-price">{{ product.discounted }}</span>
+                        </div>
+                        <div v-else>
+                            <span class="prod-price">{{ product.price }}</span>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -458,12 +469,32 @@ export default {
     padding: 1rem;
 }
 
+//price 
 .prod-price{
     color: #f8a900;
     font-weight: 500;
     padding: 1rem;
 }
 
+.prod-price {
+    color: #f8a900;
+    font-weight: 500;
+    padding: 1rem;
+}
+
+.discounted {
+    text-decoration: line-through;
+    color: #342C3D;
+}
+
+.prod-discounted-price {
+    color: #f8a900; /* You can change the color based on your design */
+    font-weight: 500;
+    padding: 1rem;
+}
+
+
+//rating
 .rating {
     padding: 1rem;
 }
