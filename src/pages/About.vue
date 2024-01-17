@@ -3,6 +3,7 @@ export default {
   name: 'About',
   data() {
     return {
+      activeCard: 0,
       cards: [
         {
           title: 'Easy To Use',
@@ -34,7 +35,29 @@ export default {
           text: 'Enjoy a comprehensive collection of WordPress 101 video tutorials on our membership training area.',
           icon: 'fa-regular fa-circle-play'
         }
+      ],
+      pics: [
+        '/img/Et-quasi-architecto-beate.jpg',
+        '/img/Laborum-et-dolor-fuga-Et.jpg',
+        '/img/Blandit-praesen-volupta-1400x878_t.jpg'
       ]
+    }
+  },
+  methods: {
+    prevImg() {
+      this.activeCard--
+      if (this.activeCard < 0) {
+        this.activeCard = this.pics.length - 1
+      }
+    },
+    nextImg() {
+      this.activeCard++
+      if (this.activeCard > this.pics.length - 1) {
+        this.activeCard = 0
+      }
+    },
+    thumbNail(i) {
+      this.activeCard = i
     }
   }
 }
@@ -62,78 +85,44 @@ export default {
         </div>
       </div>
       <div class="row">
-        <div
-          id="carouselExampleFade"
-          class="carousel slide carousel-fade col-lg-6"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="/img/Et-quasi-architecto-beate.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="/img/Laborum-et-dolor-fuga-Et.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="/img/Blandit-praesen-volupta-1400x878_t.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
+        <div class="col-lg-6">
+          <div class="slider-wrapper" tabindex="0">
+            <div class="item">
+              <img :src="pics[activeCard]" alt="" />
+
+              <div class="prev" @click="prevImg">
+                <i class="fa-solid fa-circle-left"></i>
+              </div>
+              <div class="next" @click="nextImg">
+                <i class="fa-solid fa-circle-right"></i>
+              </div>
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleFade"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleFade"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
         <div class="col-lg-6">
-          <div>
-            <h5>Why choose us</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-              velit! Dolorem, minima sapiente. Alias omnis in nesciunt,
-              molestias optio voluptatibus aliquam labore, error officiis,
-              corrupti commodi eaque a nemo ex? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Corrupti qui quo nemo. Voluptatibus,
-              aliquam similique cumque alias at, doloremque maiores ipsum
-              obcaecati quos sit, eligendi animi magnam nisi rerum magni!
-            </p>
-            <ul>
-              <li>Praesent sed ex vel mauris ele.</li>
-              <li>Nam vel luctus nulla, eget interdum metus</li>
-              <li>Temporibus autem</li>
-              <li>Excepteur sint occaecat</li>
-            </ul>
-            <div class="lets-talk col-lg-3">Let's TALK</div>
-          </div>
+          <h5>Why choose us</h5>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+            velit! Dolorem, minima sapiente. Alias omnis in nesciunt, molestias
+            optio voluptatibus aliquam labore, error officiis, corrupti commodi
+            eaque a nemo ex? Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Corrupti qui quo nemo. Voluptatibus, aliquam similique cumque
+            alias at, doloremque maiores ipsum obcaecati quos sit, eligendi
+            animi magnam nisi rerum magni!
+          </p>
+          <ul>
+            <li>Praesent sed ex vel mauris ele.</li>
+            <li>Nam vel luctus nulla, eget interdum metus</li>
+            <li>Temporibus autem</li>
+            <li>Excepteur sint occaecat</li>
+          </ul>
+          <div class="lets-talk col-lg-3">Let's TALK</div>
         </div>
       </div>
     </div>
+
     <!-- SEZIONE HISTORY -->
-    <div class="container history text-center mt-5">
+    <div class="history text-center mt-5">
       <h2>Codezeel History</h2>
       <div class="row">
         <div class="col-lg-4" v-for="(card, i) in cards" :key="i">
@@ -147,6 +136,14 @@ export default {
         </div>
       </div>
     </div>
+    <!-- TEAM -->
+    <div class="team text-center">
+      <h3>Our Team Member</h3>
+      <p>Meet the many faces that help power the Elegant Themes community</p>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+    </div>
   </section>
 </template>
 
@@ -155,7 +152,8 @@ export default {
 @use '../styles/partials/mixins.scss' as *;
 #About-us {
   background-image: url('public/img/body-bg.jpg');
-  height: 800px;
+  // height: 800px;
+  padding-bottom: 30px;
   color: white;
   .lets-talk {
     background-color: #23172f;
@@ -165,6 +163,58 @@ export default {
   .lets-talk:hover {
     cursor: pointer;
     color: #f9aa01;
+  }
+  .item {
+    float: left;
+    position: relative;
+  }
+
+  .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .item .text {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-align: right;
+    color: white;
+  }
+
+  .prev {
+    border-radius: 50%;
+    position: absolute;
+    left: 5%;
+    bottom: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0.3;
+    display: none;
+    i {
+      font-size: 30px;
+    }
+  }
+  .next {
+    border-radius: 50%;
+    position: absolute;
+    left: 95%;
+    bottom: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0.3;
+    display: none;
+    i {
+      font-size: 30px;
+    }
+  }
+
+  .slider-wrapper:hover .prev,
+  .slider-wrapper:hover .next {
+    display: block;
   }
 }
 </style>
