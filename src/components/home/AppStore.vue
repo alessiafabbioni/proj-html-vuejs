@@ -236,7 +236,7 @@ export default {
             <h1>Our Products</h1>
             <span class="title-divider"></span>
         </div>
-        <div class="row">
+        <div class="row prod-container">
             <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
                 <img class=" card-promo " :src="product.image" :alt="product.name">
                 <div class="product-info">
@@ -253,11 +253,13 @@ export default {
                     </div>
                 </div>
             </div>
+            <div class="arrow navigation-button">
+                <div class="prev" @click="prevSlide" :disabled="currentIndex === 0"></div>
+                <div class="next" @click="nextSlide" :disabled="currentIndex + 1 >= products.length"></div>
+            </div>
         </div>
-        <div class="navigation-buttons">
-            <button @click="prevSlide" :disabled="currentIndex === 0">Previous</button>
-            <button @click="nextSlide" :disabled="currentIndex + 4 >= products.length">Next</button>
-        </div>
+        <!-- sezione frecce (prev. next) -->
+
 
         <!-- Second section with the 2 images -->
         <div class="row mt-7">
@@ -479,7 +481,64 @@ export default {
     }
 }
 
+//slider 
 
+
+
+
+    .prod-container {
+    position: relative;
+    width: 100%;
+
+    .arrow {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        display: none;
+
+    .prev {
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../public/img/arrow.png) ;
+        background-position: 0% 100%;
+        position: absolute;
+        top: 600%;
+        bottom: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 300ms ease;
+
+        &:hover {
+            background-image: url(../../../public/img/arrow.png);
+            background-position: 0% 0%;
+        }
+    }
+
+    .next {
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../public/img/arrow.png) ;
+        background-position: -59% 100%;
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 300ms ease;
+
+        &:hover {
+            background-image: url(../../../public/img/arrow.png) ;
+            background-position: 100% 0%;
+    
+        }
+    }
+    }
+
+    &:hover .arrow{
+        cursor: pointer;
+        display: block;
+        position: absolute;
+    }
+}
 
 
 </style>
