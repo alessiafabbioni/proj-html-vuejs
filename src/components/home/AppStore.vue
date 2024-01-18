@@ -436,6 +436,7 @@ export default {
     .prod-container {
     position: relative;
     width: 100%;
+    margin-bottom: 3rem;
 
     .arrow {
         width: 30px;
