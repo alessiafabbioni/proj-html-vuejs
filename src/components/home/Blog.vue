@@ -75,12 +75,20 @@ export default {
 
             //funzione per far funzionare lo slider
             nextSlide() {
-            if (this.currentIndex + 1 < this.posts.length) {
+
+            if (this.currentIndex + 1 === this.posts.length -2)  {
+                this.currentIndex = 0;
+            } else if (this.currentIndex + 1 < this.posts.length) {
                 this.currentIndex += 1;
-            } 
+            }
+            
             },
+
+
             prevSlide() {
-            if (this.currentIndex > 0) {
+            if (this.currentIndex === 0) {
+                this.currentIndex = this.posts.length -3
+            } else if (this.currentIndex > 0) {
                 this.currentIndex -= 1;
             } 
             },
@@ -138,23 +146,21 @@ export default {
         &:hover .plus-img {
             cursor: pointer;
             display: block;
-            background-color: #F8A900;
-            border: none;
+
+            &:hover .plus-img {
+                    background-color: #F8A900;
+                    border: none;
             
-            i {
-                color: black;
-            }
+                    i {
+                        color: black;
+                    }
+                }
+           
         }
 
         &:hover .link-img {
             cursor: pointer;
             display: block;
-            background-color: #F8A900;
-            border: none;
-            
-            i {
-                color: black;
-            }
             
         }
 
@@ -271,6 +277,7 @@ export default {
         display: block;
     }
 }
+
 
 
 </style>

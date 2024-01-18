@@ -36,7 +36,7 @@ export default {
 
             displayedBrand() {
                     console.log(this.currentIndex)
-                    return this.brands.slice(this.currentIndex, this.currentIndex + 5);
+                    return this.brands.slice(this.currentIndex, this.currentIndex + this.brands.length -1);
 
             },
 
@@ -45,15 +45,20 @@ export default {
 
         //funzione per far funzionare lo slider
         nextBrand() {
-            if (this.currentIndex + 1 < this.brands.length) {
+            if (4 + this.currentIndex + 1 < this.brands.length) {
                 this.currentIndex += 1;
         
+            } else if (4 + this.currentIndex + 1 === this.brands.length) {
+                this.currentIndex = 0;
             }
+
             },
         prevBrand() {
             if (this.currentIndex > 0) {
                 this.currentIndex -= 1;
-            }  
+            }else if (this.currentIndex === 0) {
+                this.currentIndex = this.brands.length - this.brands.length -1;
+            }
         },
 },
 }
