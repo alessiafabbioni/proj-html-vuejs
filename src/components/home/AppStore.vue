@@ -4,83 +4,86 @@ export default {
     data(){
         return {
             products: [
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/01.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/02.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/03.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/04.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "new arrival",
-                    image: "../../../public/img/05.jpg"
-                },{
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/06.jpg"
-                },{
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/07.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/08.jpg"
-                },{
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "new arrival",
-                    image: "../../../public/img/09.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/10.jpg"
-                },
+            {
+                name: "Wireless Mouse",
+                price: 45.99,
+                discounted: 22.50,
+                rating: 3.8,
+                tag: "sale",
+                image: "../../../public/img/01.jpg"
+            },
+            {
+                name: "Mechanical Keyboard",
+                price: 109.99,
+                discounted: 78.25,
+                rating: 4.1,
+                tag: "bestseller",
+                image: "../../../public/img/02.jpg"
+            },
+            {
+                name: "Gaming Monitor",
+                price: 279.99,
+                discounted: null,
+                rating: 2.9,
+                tag: "featured",
+                image: "../../../public/img/03.jpg"
+            },
+            {
+                name: "RGB Gaming Chair",
+                price: 199.99,
+                discounted: 85.60,
+                rating: 4.3,
+                tag: "new arrival",
+                image: "../../../public/img/04.jpg"
+            },
+            {
+                name: "Gaming Laptop",
+                price: 1299.99,
+                discounted: null,
+                rating: 4.7,
+                tag: "featured",
+                image: "../../../public/img/05.jpg"
+            },
+            {
+                name: "Gaming Mouse Pad",
+                price: 19.99,
+                discounted: null,
+                rating: 3.5,
+                tag: "sale",
+                image: "../../../public/img/06.jpg"
+            },
+            {
+                name: "Webcam with Microphone",
+                price: 64.99,
+                discounted: null,
+                rating: 4.0,
+                tag: "featured",
+                image: "../../../public/img/07.jpg"
+            },
+            {
+                name: "External Hard Drive",
+                price: 89.99,
+                discounted: 45.00,
+                rating: 4.5,
+                tag: "bestseller",
+                image: "../../../public/img/08.jpg"
+            },
+            {
+                name: "Gaming Desk",
+                price: 179.99,
+                discounted: 90.00,
+                rating: 4.6,
+                tag: "new arrival",
+                image: "../../../public/img/09.jpg"
+            },
+            {
+                name: "Wireless Gaming Controller",
+                price: 54.99,
+                discounted: 27.50,
+                rating: 4.2,
+                tag: "featured",
+                image: "../../../public/img/10.jpg"
+            },
                 {
                     name: "Gaming Headset",
                     price: 89.99,
@@ -144,9 +147,32 @@ export default {
                     tag: "new arrival",
                     image: "../../../public/img/18.jpg"
                 },
-            ]
+            ],
+            currentIndex: 0,
         }
-    }
+    },
+    computed: {
+        displayedProducts() {
+        return this.products.slice(this.currentIndex, this.currentIndex + 4);
+        },
+    },
+    methods: {
+        nextSlide() {
+            if (this.currentIndex + 4 < this.products.length) {
+            this.currentIndex += 4;
+            }
+        },
+    prevSlide() {
+            if (this.currentIndex > 0) {
+            this.currentIndex -= 4;
+            }
+        },
+    
+    getStarClass(index, rating) {
+        const roundedRating = Math.round(rating * 2) / 2; 
+        return index + 0.5 <= roundedRating ? 'checked' : '';
+    },
+}
 }
 
 </script>
@@ -215,24 +241,34 @@ export default {
             <h1>Our Products</h1>
             <span class="title-divider"></span>
         </div>
-        <div class="row">
-            <div v-for="product in products" :key="i" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+        <div class="row prod-container">
+            <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
                 <img class=" card-promo " :src="product.image" :alt="product.name">
                 <div class="product-info">
                     <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        <span v-for="i in 5" :key="i" :class="['fa', 'fa-star', getStarClass(i, product.rating)]"></span>
                     </div>
                     <div>
                         <h5 class="prod-title"> {{ product.name }}</h5>
-                        <span class="prod-price"> {{ product.price }}</span>
+                        <div  v-if="product.discounted !== null">
+                            <span class="prod-price discounted">{{ product.price }}</span>
+                            <span class="prod-discounted-price">{{ product.discounted }}</span>
+                        </div>
+                        <div v-else>
+                            <span class="prod-price">{{ product.price }}</span>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
+            <div class="arrow navigation-button">
+                <div class="prev" @click="prevSlide" :disabled="currentIndex === 0"></div>
+                <div class="next" @click="nextSlide" :disabled="currentIndex + 1 >= products.length"></div>
+            </div>
         </div>
+        <!-- sezione frecce (prev. next) -->
+
+
         <!-- Second section with the 2 images -->
         <div class="row mt-7">
             <div class="col-lg-6 col-md-12 col-sm-12 mb-5 column-gap-5">
@@ -430,12 +466,32 @@ export default {
     padding: 1rem;
 }
 
+//price 
 .prod-price{
     color: #f8a900;
     font-weight: 500;
     padding: 1rem;
 }
 
+.prod-price {
+    color: #f8a900;
+    font-weight: 500;
+    padding: 1rem;
+}
+
+.discounted {
+    text-decoration: line-through;
+    color: #342C3D;
+}
+
+.prod-discounted-price {
+    color: #f8a900; /* You can change the color based on your design */
+    font-weight: 500;
+    padding: 1rem;
+}
+
+
+//rating
 .rating {
     padding: 1rem;
 }
@@ -453,7 +509,64 @@ export default {
     }
 }
 
+//slider 
 
+
+
+
+    .prod-container {
+    position: relative;
+    width: 100%;
+
+    .arrow {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        display: none;
+
+    .prev {
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../public/img/arrow.png) ;
+        background-position: 0% 100%;
+        position: absolute;
+        top: 600%;
+        bottom: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 300ms ease;
+
+        &:hover {
+            background-image: url(../../../public/img/arrow.png);
+            background-position: 0% 0%;
+        }
+    }
+
+    .next {
+        width: 30px;
+        height: 30px;
+        background-image: url(../../../public/img/arrow.png) ;
+        background-position: -59% 100%;
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 300ms ease;
+
+        &:hover {
+            background-image: url(../../../public/img/arrow.png) ;
+            background-position: 100% 0%;
+    
+        }
+    }
+    }
+
+    &:hover .arrow{
+        cursor: pointer;
+        display: block;
+        position: absolute;
+    }
+}
 
 
 </style>

@@ -3,6 +3,7 @@ export default {
   name: 'BrandsProducts',
   data() {
     return {
+      currentIndex: 0,
       brands: [
         {
           img: '../../../public/img/brand-01.png',
@@ -26,23 +27,24 @@ export default {
         }
       ]
     }
-  }
+  },
 }
+
 </script>
 
 <template>
   <div class="container-fluid">
     <div class="container">
       <!-- ciclo delle immagini dei brands -->
-      <div class="brands-products">
+      <div class="brands-products" >
         <div class="img-brands" v-for="(image, i) in brands" :key="i">
           <img :src="image.img" :alt="image.name" />
         </div>
       </div>
       <!-- sezione frecce (prev. next) -->
       <div class="arrow">
-        <div class="prev"></div>
-        <div class="next"></div>
+        <div class="prev" ></div>
+        <div class="next" ></div>
       </div>
     </div>
   </div>
