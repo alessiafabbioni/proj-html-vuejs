@@ -1,178 +1,80 @@
 <script>
+//importo store
+import { store } from '/src/store.js'
+
 export default {
     name: 'AppStore',
     data(){
+
         return {
-            products: [
-            {
-                name: "Wireless Mouse",
-                price: 45.99,
-                discounted: 22.50,
-                rating: 3.8,
-                tag: "sale",
-                image: "../../../public/img/01.jpg"
+            store: {
+                products: store.products,
+                filteredProducts: [],
             },
-            {
-                name: "Mechanical Keyboard",
-                price: 109.99,
-                discounted: 78.25,
-                rating: 4.1,
-                tag: "bestseller",
-                image: "../../../public/img/02.jpg"
-            },
-            {
-                name: "Gaming Monitor",
-                price: 279.99,
-                discounted: null,
-                rating: 2.9,
-                tag: "featured",
-                image: "../../../public/img/03.jpg"
-            },
-            {
-                name: "RGB Gaming Chair",
-                price: 199.99,
-                discounted: 85.60,
-                rating: 4.3,
-                tag: "new arrival",
-                image: "../../../public/img/04.jpg"
-            },
-            {
-                name: "Gaming Laptop",
-                price: 1299.99,
-                discounted: null,
-                rating: 4.7,
-                tag: "featured",
-                image: "../../../public/img/05.jpg"
-            },
-            {
-                name: "Gaming Mouse Pad",
-                price: 19.99,
-                discounted: null,
-                rating: 3.5,
-                tag: "sale",
-                image: "../../../public/img/06.jpg"
-            },
-            {
-                name: "Webcam with Microphone",
-                price: 64.99,
-                discounted: null,
-                rating: 4.0,
-                tag: "featured",
-                image: "../../../public/img/07.jpg"
-            },
-            {
-                name: "External Hard Drive",
-                price: 89.99,
-                discounted: 45.00,
-                rating: 4.5,
-                tag: "bestseller",
-                image: "../../../public/img/08.jpg"
-            },
-            {
-                name: "Gaming Desk",
-                price: 179.99,
-                discounted: 90.00,
-                rating: 4.6,
-                tag: "new arrival",
-                image: "../../../public/img/09.jpg"
-            },
-            {
-                name: "Wireless Gaming Controller",
-                price: 54.99,
-                discounted: 27.50,
-                rating: 4.2,
-                tag: "featured",
-                image: "../../../public/img/10.jpg"
-            },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/11.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/12.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/13.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/14.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/15.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "new arrival",
-                    image: "../../../public/img/16.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "featured",
-                    image: "../../../public/img/17.jpg"
-                },
-                {
-                    name: "Gaming Headset",
-                    price: 89.99,
-                    discounted: 50.00,
-                    rating: 4.5,
-                    tag: "new arrival",
-                    image: "../../../public/img/18.jpg"
-                },
-            ],
             currentIndex: 0,
+            
         }
     },
     computed: {
+
         displayedProducts() {
-        return this.products.slice(this.currentIndex, this.currentIndex + 4);
+        return this.store.filteredProducts.slice(this.currentIndex, this.currentIndex + 4);
         },
     },
     methods: {
+
+        //funzione per far funzionare lo slider
         nextSlide() {
-            if (this.currentIndex + 4 < this.products.length) {
-            this.currentIndex += 4;
-            }
+        if (this.currentIndex + 4 < this.store.filteredProducts.length) {
+        this.currentIndex += 4;
+        } else {
+        // Check if there are no more filtered products
+        if (this.store.filteredProducts.length === 0) {
+        // If no more filtered products, switch to 'featured'
+        this.setDefaultFilter();
+        } else {
+        // If there are still filtered products, reset the index
+        this.currentIndex = 0;
+        }
+        }
         },
-    prevSlide() {
-            if (this.currentIndex > 0) {
+
+        prevSlide() {
+        if (this.currentIndex > 0) {
             this.currentIndex -= 4;
-            }
+        }
         },
-    
-    getStarClass(index, rating) {
-        const roundedRating = Math.round(rating * 2) / 2; 
+
+        //funzione per orchestrare i rating dei prodotti
+        getStarClass(index, rating) {
+        const roundedRating = Math.round(rating * 2) / 2;
         return index + 0.5 <= roundedRating ? 'checked' : '';
+        },
+
+        //funzinone per filtrare i prodotti
+        filterProducts(category) {
+        console.log("Filtering products by category:", category);
+        console.log("All products:", this.store.products);
+        
+        const filteredProducts = this.store.products.filter((product) => {
+        return product.tag.includes(category.toLowerCase());
+        });
+
+        console.log("Filtered products:", filteredProducts);
+
+        this.store.filteredProducts = filteredProducts;
+        this.currentIndex = 0;
+        },
+
+        //impostazioni di filtro di default
+        setDefaultFilter() {
+        this.filterProducts('featured');
+        },
+
     },
-}
+    mounted() {
+        this.setDefaultFilter();
+    }
 }
 
 </script>
@@ -241,32 +143,47 @@ export default {
             <h1>Our Products</h1>
             <span class="title-divider"></span>
         </div>
-        <div class="row prod-container">
-            <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " :src="product.image" :alt="product.name">
-                <div class="product-info">
-                    <div class="rating">
-                        <span v-for="i in 5" :key="i" :class="['fa', 'fa-star', getStarClass(i, product.rating)]"></span>
+        <div class="row">
+            <div class="col-lg-6 offset-3 col-md-12 col-sm-12">
+                <div class="row countdown">
+                    <div class="col time-box" @click="filterProducts('new arrival')">
+                        <h5>New Arrival</h5>
                     </div>
-                    <div>
-                        <h5 class="prod-title"> {{ product.name }}</h5>
-                        <div  v-if="product.discounted !== null">
-                            <span class="prod-price discounted">{{ product.price }}</span>
-                            <span class="prod-discounted-price">{{ product.discounted }}</span>
-                        </div>
-                        <div v-else>
-                            <span class="prod-price">{{ product.price }}</span>
-                        </div>
-                        
+                    <div class="col time-box" @click="filterProducts('featured')">
+                        <h5>Featured</h5>
+                    </div>
+                    <div class="col time-box" @click="filterProducts('bestseller')">
+                        <h5>Best Sellers</h5>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row prod-container">
+                <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                    <img class=" card-promo " :src="product.image" :alt="product.name">
+                    <div class="product-info">
+                        <div class="rating">
+                            <span v-for="i in 5" :key="i" :class="['fa', 'fa-star', getStarClass(i, product.rating)]"></span>
+                        </div>
+                        <div>
+                            <h5 class="prod-title"> {{ product.name }}</h5>
+                            <div  v-if="product.discounted !== null">
+                                <span class="prod-price discounted">$ {{ product.price }}</span>
+                                <span class="prod-discounted-price">$ {{ product.discounted }}</span>
+                            </div>
+                            <div v-else>
+                                <span class="prod-price">$ {{ product.price }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+             <!-- sezione frecce (prev. next) -->
             <div class="arrow navigation-button">
                 <div class="prev" @click="prevSlide" :disabled="currentIndex === 0"></div>
-                <div class="next" @click="nextSlide" :disabled="currentIndex + 1 >= products.length"></div>
+                <div class="next" @click="nextSlide" :disabled="currentIndex + 1 >= store.filteredProducts.length"></div>
             </div>
-        </div>
-        <!-- sezione frecce (prev. next) -->
+        </div>   
+
 
 
         <!-- Second section with the 2 images -->
@@ -506,10 +423,16 @@ export default {
         padding: 1rem;
         border: solid 1px #342C3D;
         text-align: center;
+
+        &:hover {
+            color: #f8a900;
+            cursor: pointer;
+            border: solid 1px #f8a900;
+        }
     }
 }
 
-//slider 
+
 
 
 
@@ -547,9 +470,9 @@ export default {
         background-image: url(../../../public/img/arrow.png) ;
         background-position: -59% 100%;
         position: absolute;
-        right: 0;
+        right: -4284%;
         bottom: 50%;
-        top: 50%;
+        top: 600%;
         transform: translate(-50%, -50%);
         transition: all 300ms ease;
 
