@@ -30,13 +30,24 @@ export default {
   },
   methods: {
     scrollNext() {
-        this.activeImg = this.brands.length - 1
-        console.log (this.activeImg)
-        
-        
+      this.activeImg = (this.activeImg + 1) % this.brands.length;
+      this.scrollBrands();
+    },
+    scrollPrev() {
+      this.activeImg = (this.activeImg - 1 + this.brands.length) % this.brands.length;
+      this.scrollBrands();
+    },
+    scrollBrands() {
+      const containerWidth = this.$refs.brandsContainer.offsetWidth;
+      const scrollAmount = this.activeImg * containerWidth;
+      this.$refs.brandsContainer.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
     }
-  }
+  },
 }
+
 </script>
 
 <template>
@@ -50,7 +61,7 @@ export default {
       </div>
       <!-- sezione frecce (prev. next) -->
       <div class="arrow">
-        <div class="prev"></div>
+        <div class="prev" @click="scrollPrev"></div>
         <div class="next" @click="scrollNext"></div>
       </div>
     </div>
