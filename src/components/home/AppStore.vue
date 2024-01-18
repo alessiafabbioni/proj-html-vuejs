@@ -10,6 +10,7 @@ export default {
             store: {
                 products: store.products,
                 filteredProducts: [],
+                discountedProducts: [],
             },
             currentIndex: 0,
         };
@@ -80,8 +81,6 @@ export default {
     },
     mounted() {
         this.setDefaultFilter();
-
-    
     },
 }
 
@@ -248,73 +247,36 @@ export default {
 
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
-                <div class="product-info">
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+        <div class="row prod-container">
+                <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                    <div class="discount-card">
+                        <img class=" card-promo " :src="product.image" :alt="product.name">
+                        <div class="discount-flag" v-if="product.discounted !== null">
+                            <span>{{ calculateDiscountPercentage(product.price, product.discounted) }}% off</span>
+                        </div>
                     </div>
-                    <div>
-                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
-                        <span class="prod-price">$100.00</span>
+                    <div class="product-info">
+                        <div class="rating">
+                            <span v-for="i in 5" :key="i" :class="['fa', 'fa-star', getStarClass(i, product.rating)]"></span>
+                        </div>
+                        <div>
+                            <h5 class="prod-title"> {{ product.name }}</h5>
+                            <div  v-if="product.discounted !== null">
+                                <span class="prod-price discounted">$ {{ product.price }}</span>
+                                <span class="prod-discounted-price">$ {{ product.discounted }}</span>
+                            </div>
+                            <div v-else>
+                                <span class="prod-price">$ {{ product.price }}</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div>        
+             <!-- sezione frecce (prev. next) -->
+            <div class="arrow navigation-button">
+                <div class="prev" @click="prevSlide" :disabled="currentIndex === 0"></div>
+                <div class="next" @click="nextSlide" :disabled="currentIndex + 1 >= store.filteredProducts.length"></div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
-                <div class="product-info">
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <div>
-                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
-                        <span class="prod-price">$100.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
-                <div class="product-info">
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <div>
-                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
-                        <span class="prod-price">$100.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/04.jpg" alt="Image container">
-                <div class="product-info">
-                    <div class="rating">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                    <div>
-                        <h5 class="prod-title"> Shopping Mahjong connect</h5>
-                        <span class="prod-price">$100.00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        </div>   
 
     </section>
 
