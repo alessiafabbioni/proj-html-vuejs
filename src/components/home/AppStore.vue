@@ -271,7 +271,7 @@ export default {
                         </div>
                     </div>
                 </div>        
-             <!-- sezione frecce (prev. next) -->
+            <!-- sezione frecce (prev. next) -->
             <div class="arrow navigation-button">
                 <div class="prev" @click="prevSlide" :disabled="currentIndex === 0"></div>
                 <div class="next" @click="nextSlide" :disabled="currentIndex + 1 >= store.filteredProducts.length"></div>
@@ -348,6 +348,15 @@ export default {
     a {
         color: #f8a900;
         padding: 0 20px;
+        transition: 1s ease;
+
+        &:hover {
+            text-decoration: none;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+
     }
 }
 
