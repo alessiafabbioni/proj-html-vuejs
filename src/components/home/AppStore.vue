@@ -12,8 +12,7 @@ export default {
                 filteredProducts: [],
             },
             currentIndex: 0,
-            
-        }
+        };
     },
     computed: {
 
@@ -71,11 +70,22 @@ export default {
         this.filterProducts('featured');
         },
 
+        //calcolo dello sconto sul prodotto
+        calculateDiscountPercentage(originalPrice, discountedPrice) {
+        const discountPercentage = ((originalPrice - discountedPrice) / originalPrice) * 100;
+        return discountPercentage.toFixed(2);
+        },
+
+    
     },
     mounted() {
         this.setDefaultFilter();
-    }
+
+    
+    },
 }
+
+
 
 </script>
 
@@ -84,7 +94,7 @@ export default {
         <!-- First 2 initial images -->
         <div class="row mt-7">
             <div class="col-lg-6 col-md-12 col-sm-12 mb-5 column-gap-5">
-                <div class="card-promo">
+                <div class="card-promo zoom">
                     <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/cms-banner-01.jpg" alt="most popular">
                     <div class="card-promo-info">
                         <h3>Most Popular</h3>
@@ -94,7 +104,7 @@ export default {
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 mb-5 column-gap-5">
-                <div class="card-promo">
+                <div class="card-promo zoom">
                     <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/cms-banner-02.jpg" alt="most popular">
                     <div class="card-promo-info">
                         <h3>Most Popular</h3>
@@ -160,7 +170,12 @@ export default {
         </div>
         <div class="row prod-container">
                 <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                    <img class=" card-promo " :src="product.image" :alt="product.name">
+                    <div class="discount-card">
+                        <img class=" card-promo " :src="product.image" :alt="product.name">
+                        <div class="discount-flag" v-if="product.discounted !== null">
+                            <span>{{ calculateDiscountPercentage(product.price, product.discounted) }}% off</span>
+                        </div>
+                    </div>
                     <div class="product-info">
                         <div class="rating">
                             <span v-for="i in 5" :key="i" :class="['fa', 'fa-star', getStarClass(i, product.rating)]"></span>
@@ -189,7 +204,7 @@ export default {
         <!-- Second section with the 2 images -->
         <div class="row mt-7">
             <div class="col-lg-6 col-md-12 col-sm-12 mb-5 column-gap-5">
-                <div class="card-promo">
+                <div class="card-promo zoom">
                     <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/cms-banner-03.jpg" alt="most popular">
                     <div class="card-promo-info">
                         <h3>20% discount</h3>
@@ -199,7 +214,7 @@ export default {
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 mb-5 column-gap-5">
-                <div class="card-promo">
+                <div class="card-promo zoom">
                     <img src="https://capricathemes.com/wordpress/WCM04/WCM040086/wp-content/uploads/2020/08/cms-banner-04.jpg" alt="most popular">
                     <div class="card-promo-info">
                         <h3>30% discount</h3>
@@ -217,16 +232,16 @@ export default {
             <div class="col-lg-6 offset-3 col-md-12 col-sm-12">
                 <div class="row countdown">
                     <div class="col time-box">
-                        <h5>442 days</h5>
+                        <h5>0 days</h5>
                     </div>
                     <div class="col time-box">
-                        <h5>13 hours</h5>
+                        <h5>0 hours</h5>
                     </div>
                     <div class="col time-box">
-                        <h5>31 mins</h5>
+                        <h5>0 mins</h5>
                     </div>
                     <div class="col time-box">
-                        <h5>30 sec</h5>
+                        <h5>0 sec</h5>
                     </div>
 
                 </div>
@@ -318,6 +333,15 @@ export default {
     overflow: hidden;
     width: 100%;
 
+    
+    img {
+        width: 100%;
+    }
+
+    &:hover .special-info{
+        background-color: black;
+    }
+
 
 }
 
@@ -351,6 +375,7 @@ export default {
     left: 0;
     width: 100%;
     height: 20%;
+    transition: 0.3s ease;
 
     h4 {
         color: white;
@@ -491,5 +516,31 @@ export default {
     }
 }
 
+//Discount flag
+
+.discount-card {
+    position: relative;
+
+    .discount-flag {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        background-color: #f8a900;
+        color: #170F1F;
+    }
+}
+
+//pic zoom
+
+.zoom {
+    img {
+    transition: transform 0.8s;
+    }
+
+    &:hover img {
+    transform: scale(1.5);
+    transition: transform 5s; 
+    }
+}
 
 </style>

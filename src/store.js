@@ -61,7 +61,7 @@ export const store = reactive ({
         {
             name: "External Hard Drive",
             price: 89.99,
-            discounted: 45.00,
+            discounted: 45.50,
             rating: 4.5,
             tag: ["bestseller", "featured"],
             image: "../../../public/img/08.jpg"
@@ -69,7 +69,7 @@ export const store = reactive ({
         {
             name: "Gaming Desk",
             price: 179.99,
-            discounted: 90.00,
+            discounted: 120.50,
             rating: 4.6,
             tag: ["bestseller", "featured"],
             image: "../../../public/img/09.jpg"
@@ -77,7 +77,7 @@ export const store = reactive ({
         {
             name: "Wireless Gaming Controller",
             price: 54.99,
-            discounted: 27.50,
+            discounted: 50.50,
             rating: 4.2,
             tag: ["bestseller", "featured"],
             image: "../../../public/img/10.jpg"
@@ -85,22 +85,23 @@ export const store = reactive ({
             {
                 name: "Gaming Headset",
                 price: 89.99,
-                discounted: 50.00,
+                discounted: 74.54,
                 rating: 4.5,
                 tag: ["bestseller", "featured"],
                 image: "../../../public/img/11.jpg"
             },
             {
                 name: "Gaming Headset",
-                price: 89.99,
-                discounted: 50.00,
+                price: 189.99,
+                discounted: 127.44,
                 rating: 4.5,
                 tag: ["bestseller", "featured"],
                 image: "../../../public/img/12.jpg"
             },
             {
                 name: "Gaming Headset",
-                price: 89.99,
+                price: 112.99,
+                discounted: 92.12,
                 rating: 4.5,
                 tag: ["featured", "new arrival"],
                 image: "../../../public/img/13.jpg"
@@ -108,23 +109,23 @@ export const store = reactive ({
             {
                 name: "Gaming Headset",
                 price: 89.99,
-                discounted: 50.00,
+                discounted: null,
                 rating: 4.5,
                 tag: ["featured", "new arrival"],
                 image: "../../../public/img/14.jpg"
             },
             {
                 name: "Gaming Headset",
-                price: 89.99,
-                discounted: 50.00,
+                price: 69.99,
+                discounted: null,
                 rating: 4.5,
                 tag: ["featured", "new arrival"],
                 image: "../../../public/img/15.jpg"
             },
             {
                 name: "Gaming Headset",
-                price: 89.99,
-                discounted: 50.00,
+                price: 372.99,
+                discounted: 140.12,
                 rating: 4.5,
                 tag: ["new arrival", "bestseller"],
                 image: "../../../public/img/16.jpg"
@@ -132,7 +133,7 @@ export const store = reactive ({
             {
                 name: "Gaming Headset",
                 price: 89.99,
-                discounted: 50.00,
+                discounted: null,
                 rating: 4.5,
                 tag: ["new arrival", "bestseller"],
                 image: "../../../public/img/17.jpg"
@@ -140,7 +141,7 @@ export const store = reactive ({
             {
                 name: "Gaming Headset",
                 price: 89.99,
-                discounted: 50.00,
+                discounted: null,
                 rating: 4.5,
                 tag: ["featured", "new arrival"],
                 image: "../../../public/img/18.jpg"
