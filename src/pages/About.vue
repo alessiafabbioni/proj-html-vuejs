@@ -1,11 +1,14 @@
 <script>
 import WhyUs from '../components/about/WhyUs.vue'
 import Team from '../components/about/Team.vue'
+import BrandsProducts from '../components/reusable/BrandsProducts.vue'
+
 export default {
   name: 'About',
   components: {
     WhyUs,
-    Team
+    Team,
+    BrandsProducts
   },
   data() {
     return {
@@ -88,6 +91,7 @@ export default {
       </div>
     </div>
     <Team />
+    <BrandsProducts/>
   </section>
 </template>
 
