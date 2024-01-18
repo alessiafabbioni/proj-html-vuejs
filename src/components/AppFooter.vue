@@ -10,34 +10,35 @@ export default {
         <div class="container">
             
 
-                <div class="info">
+            <div class="info">
+                <div class="row">
 
-                    <div class="col-address">
+                    <div class="col-lg-4 col-md-4 col-sm-6 address">
                         <h5>Address Info</h5>
                         <div><i class="fa-solid fa-location-dot"></i> <span> 60 29th Street San Francisco, CA 94110 507-Union Trade Center, United States of America </span></div>
                         <div><i class="fa-solid fa-phone"></i> (+00) 123-456-789 </div>
-                        <div><i class="fa-solid fa-envelope"></i> demo@example.com</div>
+                        <div class="y"><i class="fa-solid fa-envelope"></i> demo@example.com</div>
                     </div>
 
-                    <div class="col">
+                    <div class="col-lg-2 col-md-2 col-sm-6 i">
                         <h5>Information</h5>
-                        <div> Bookmark </div>
-                        <div> Features </div>
-                        <div> Sitemap </div>
-                        <div> Lists </div>
-                        <div> Contact Us </div>
+                        <div class="y"> Bookmark </div>
+                        <div class="y"> Features </div>
+                        <div class="y"> Sitemap </div>
+                        <div class="y"> Lists </div>
+                        <div class="y"> Contact Us </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col-lg-2 col-md-2 col-sm-6 i">
                         <h5> Extras </h5>
-                        <div> Delivery </div>
-                        <div> Cart </div>
-                        <div> Terms condition </div>
-                        <div> My account </div>
-                        <div> About us </div>
+                        <div class="y"> Delivery </div>
+                        <div class="y"> Cart </div>
+                        <div class="y"> Terms condition </div>
+                        <div class="y"> My account </div>
+                        <div class="y"> About us </div>
                     </div>
 
-                    <div class="col">
+                    <div class="col-lg-4 col-md-4 col-sm-6 i">
                         <h5> Our Newsletter </h5>
                         <div> There are many variations of passages of form humour or randomised </div>
                         <input type="email" >
@@ -51,6 +52,7 @@ export default {
                         </div>
                     </div>
                 </div>
+            </div>
 
                 <div class="footer-bottom">
                         <div class="copyright"> Copyright © 2024 Codezeel </div>
@@ -95,7 +97,7 @@ export default {
         .info {
             width: 100%;
             padding-bottom: 110px;
-            display: flex;
+            overflow-y: auto;
 
             h5 {
                     color: white;
@@ -107,9 +109,7 @@ export default {
                 padding-bottom: 5px;
             }
 
-            .col-address {
-                width: 26%;
-                padding: 0 15px 0;
+            .address {
                 color: #bfbfbf;
                 font-size: 16px;
 
@@ -119,15 +119,9 @@ export default {
                 }
             }
         
-            .col {
-                padding: 0 15px 0;
+            .i {
                 color: #bfbfbf;
                 font-size: 16px;
-
-                div:hover {
-                    cursor: pointer;
-                    color: #f9aa01;
-                }
 
                 input {
                     width: 87%;
@@ -159,6 +153,11 @@ export default {
                 font-size: 14px;
             }
     }
+
+    .y:hover {
+                    cursor: pointer;
+                    color: #f9aa01;
+                }
     
 }
 
