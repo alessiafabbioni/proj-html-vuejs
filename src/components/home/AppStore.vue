@@ -400,10 +400,16 @@ export default {
         padding: 1rem;
         border: solid 1px #342C3D;
         text-align: center;
+
+        &:hover {
+            color: #f8a900;
+            cursor: pointer;
+            border: solid 1px #f8a900;
+        }
     }
 }
 
-//slider 
+
 
 
 
