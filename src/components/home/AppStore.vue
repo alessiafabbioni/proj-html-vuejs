@@ -16,6 +16,7 @@ export default {
         }
     },
     computed: {
+
         displayedProducts() {
         return this.store.filteredProducts.slice(this.currentIndex, this.currentIndex + 4);
         },
@@ -131,36 +132,35 @@ export default {
                     <div class="col time-box" @click="filterProducts('bestseller')">
                         <h5>Best Sellers</h5>
                     </div>
-                    </div>
                 </div>
             </div>
+        </div>
         <div class="row prod-container">
-            <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                <img class=" card-promo " :src="product.image" :alt="product.name">
-                <div class="product-info">
-                    <div class="rating">
-                        <span v-for="i in 5" :key="i" :class="['fa', 'fa-star', getStarClass(i, product.rating)]"></span>
-                    </div>
-                    <div>
-                        <h5 class="prod-title"> {{ product.name }}</h5>
-                        <div  v-if="product.discounted !== null">
-                            <span class="prod-price discounted">$ {{ product.price }}</span>
-                            <span class="prod-discounted-price">$ {{ product.discounted }}</span>
+                <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
+                    <img class=" card-promo " :src="product.image" :alt="product.name">
+                    <div class="product-info">
+                        <div class="rating">
+                            <span v-for="i in 5" :key="i" :class="['fa', 'fa-star', getStarClass(i, product.rating)]"></span>
                         </div>
-                        <div v-else>
-                            <span class="prod-price">$ {{ product.price }}</span>
+                        <div>
+                            <h5 class="prod-title"> {{ product.name }}</h5>
+                            <div  v-if="product.discounted !== null">
+                                <span class="prod-price discounted">$ {{ product.price }}</span>
+                                <span class="prod-discounted-price">$ {{ product.discounted }}</span>
+                            </div>
+                            <div v-else>
+                                <span class="prod-price">$ {{ product.price }}</span>
+                            </div>
                         </div>
-                        
                     </div>
-                </div>
-            </div>
+                </div>        
              <!-- sezione frecce (prev. next) -->
             <div class="arrow navigation-button">
                 <div class="prev" @click="prevSlide" :disabled="currentIndex === 0"></div>
                 <div class="next" @click="nextSlide" :disabled="currentIndex + 1 >= store.filteredProducts.length"></div>
             </div>
-        </div>
-       
+        </div>   
+
 
 
         <!-- Second section with the 2 images -->

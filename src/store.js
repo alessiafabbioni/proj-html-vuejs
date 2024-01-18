@@ -7,7 +7,7 @@ export const store = reactive ({
             price: 45.99,
             discounted: 22.50,
             rating: 3.8,
-            tag: "sale",
+            tag: "bestseller",
             image: "../../../public/img/01.jpg"
         },
         {
@@ -47,7 +47,7 @@ export const store = reactive ({
             price: 19.99,
             discounted: null,
             rating: 3.5,
-            tag: "sale",
+            tag: "featured",
             image: "../../../public/img/06.jpg"
         },
         {
