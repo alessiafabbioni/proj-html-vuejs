@@ -113,6 +113,10 @@ export default {
                 color: #bfbfbf;
                 font-size: 16px;
 
+                div {
+                    padding-top: 10px;
+                }
+
                 i {
                     padding-right: 10px;
                     color:  #f9aa01;
