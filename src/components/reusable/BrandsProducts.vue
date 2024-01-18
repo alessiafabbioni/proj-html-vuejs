@@ -24,10 +24,38 @@ export default {
         {
           img: '../../../public/img/brand-05.png',
           name: 'B2 Jersey'
-        }
+        },
+        {
+          img: '../../../public/img/brand-01.png',
+          name: 'White Wolfs'
+        },
       ]
     }
   },
+  computed: {
+
+            displayedBrand() {
+                    console.log(this.currentIndex)
+                    return this.brands.slice(this.currentIndex, this.currentIndex + 5);
+
+            },
+
+            },
+   methods: {
+
+        //funzione per far funzionare lo slider
+        nextBrand() {
+            if (this.currentIndex + 1 < this.brands.length) {
+                this.currentIndex += 1;
+        
+            }
+            },
+        prevBrand() {
+            if (this.currentIndex > 0) {
+                this.currentIndex -= 1;
+            }  
+        },
+},
 }
 
 </script>
@@ -37,14 +65,14 @@ export default {
     <div class="container">
       <!-- ciclo delle immagini dei brands -->
       <div class="brands-products" >
-        <div class="img-brands" v-for="(image, i) in brands" :key="i">
+        <div class="img-brands" v-for="(image, i) in displayedBrand" :key="i">
           <img :src="image.img" :alt="image.name" />
         </div>
       </div>
       <!-- sezione frecce (prev. next) -->
       <div class="arrow">
-        <div class="prev" ></div>
-        <div class="next" ></div>
+        <div class="prev" @click="prevBrand"></div>
+        <div class="next" @click="nextBrand" ></div>
       </div>
     </div>
   </div>
