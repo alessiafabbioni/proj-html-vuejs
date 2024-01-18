@@ -1,7 +1,4 @@
 <script>
-import Swiper from 'swiper';
-import 'swiper/swiper-bundle.css';
-
 export default {
     name: 'AppStore',
     data(){

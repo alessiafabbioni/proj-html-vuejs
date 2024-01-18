@@ -3,7 +3,7 @@ export default {
   name: 'BrandsProducts',
   data() {
     return {
-      activeImg: 0,
+      currentIndex: 0,
       brands: [
         {
           img: '../../../public/img/brand-01.png',
@@ -28,24 +28,6 @@ export default {
       ]
     }
   },
-  methods: {
-    scrollNext() {
-      this.activeImg = (this.activeImg + 1) % this.brands.length;
-      this.scrollBrands();
-    },
-    scrollPrev() {
-      this.activeImg = (this.activeImg - 1 + this.brands.length) % this.brands.length;
-      this.scrollBrands();
-    },
-    scrollBrands() {
-      const containerWidth = this.$refs.brandsContainer.offsetWidth;
-      const scrollAmount = this.activeImg * containerWidth;
-      this.$refs.brandsContainer.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  },
 }
 
 </script>
@@ -54,15 +36,15 @@ export default {
   <div class="container-fluid">
     <div class="container">
       <!-- ciclo delle immagini dei brands -->
-      <div class="brands-products">
+      <div class="brands-products" >
         <div class="img-brands" v-for="(image, i) in brands" :key="i">
           <img :src="image.img" :alt="image.name" />
         </div>
       </div>
       <!-- sezione frecce (prev. next) -->
       <div class="arrow">
-        <div class="prev" @click="scrollPrev"></div>
-        <div class="next" @click="scrollNext"></div>
+        <div class="prev" ></div>
+        <div class="next" ></div>
       </div>
     </div>
   </div>
