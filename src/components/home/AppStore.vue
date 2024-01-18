@@ -25,10 +25,20 @@ export default {
 
         //funzione per far funzionare lo slider
         nextSlide() {
-        if (this.currentIndex + 4 < this.store.products.length) {
-            this.currentIndex += 4;
+        if (this.currentIndex + 4 < this.store.filteredProducts.length) {
+        this.currentIndex += 4;
+        } else {
+        // Check if there are no more filtered products
+        if (this.store.filteredProducts.length === 0) {
+        // If no more filtered products, switch to 'featured'
+        this.setDefaultFilter();
+        } else {
+        // If there are still filtered products, reset the index
+        this.currentIndex = 0;
+        }
         }
         },
+
         prevSlide() {
         if (this.currentIndex > 0) {
             this.currentIndex -= 4;
@@ -43,15 +53,28 @@ export default {
 
         //funzinone per filtrare i prodotti
         filterProducts(category) {
-        const filteredProducts = this.store.products.filter(
-        (product) => product.tag.toLowerCase() === category.toLowerCase()
-        );
+        console.log("Filtering products by category:", category);
+        console.log("All products:", this.store.products);
+        
+        const filteredProducts = this.store.products.filter((product) => {
+        return product.tag.includes(category.toLowerCase());
+        });
+
+        console.log("Filtered products:", filteredProducts);
 
         this.store.filteredProducts = filteredProducts;
-        this.store.currentIndex = 0;
+        this.currentIndex = 0;
         },
 
-},
+        //impostazioni di filtro di default
+        setDefaultFilter() {
+        this.filterProducts('featured');
+        },
+
+    },
+    mounted() {
+        this.setDefaultFilter();
+    }
 }
 
 </script>
