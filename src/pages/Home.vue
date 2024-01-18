@@ -6,6 +6,9 @@ import Jumbo from '../components/home/Jumbo.vue';
 import People from '../components/home/People.vue';
 import Icons from '../components/home/Icons.vue';
 
+//importo store
+import { store } from '/src/store.js'
+
 
 export default {
     name: 'Home',
@@ -15,7 +18,8 @@ export default {
         People,
         Blog,
         Icons 
-    }
+    }, 
+    store,
 }
 
 </script>
