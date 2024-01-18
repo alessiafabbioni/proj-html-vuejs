@@ -27,6 +27,14 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    scrollNext() {
+        this.activeImg = this.brands.length - 1
+        console.log (this.activeImg)
+        
+        
+    }
   }
 }
 </script>
@@ -43,7 +51,7 @@ export default {
       <!-- sezione frecce (prev. next) -->
       <div class="arrow">
         <div class="prev"></div>
-        <div class="next"></div>
+        <div class="next" @click="scrollNext"></div>
       </div>
     </div>
   </div>
