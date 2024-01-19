@@ -91,6 +91,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        padding: 30px 0;
 
     }
 
