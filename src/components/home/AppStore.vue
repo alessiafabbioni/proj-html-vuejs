@@ -183,9 +183,10 @@ export default {
             <h1>Our Products</h1>
             <span class="title-divider"></span>
         </div>
-        <div class="row">
-            <div class="col-lg-6 offset-3 col-md-12 col-sm-12">
+        <!-- <div class="row">
+            <div class="col-lg-6 offset-3 col-md-12 col-sm-12"> -->
                 <div class="row countdown">
+                    <div class="col"></div>
                     <div class="col time-box" @click="filterProducts('new arrival')">
                         <h5>New Arrival</h5>
                     </div>
@@ -195,9 +196,10 @@ export default {
                     <div class="col time-box" @click="filterProducts('bestseller')">
                         <h5>Best Sellers</h5>
                     </div>
+                    <div class="col"></div>
                 </div>
-            </div>
-        </div>
+            <!-- </div>
+        </div> -->
         <div class="row prod-container">
                 <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
                     <div class="discount-card" @mouseover="handleHover(index)" @mouseleave="handleLeave(index)">
@@ -272,9 +274,10 @@ export default {
             <h1>Deal of the day</h1>
             <span class="title-divider"></span>
         </div>
-        <div class="row">
-            <div class="col-lg-6 offset-3 col-md-12 col-sm-12">
+        <!-- <div class="row">
+            <div class="col-lg-6 offset-3 col-md-12 col-sm-12"> -->
                 <div class="row countdown">
+                    <div class="col"></div>
                     <div class="col time-box">
                         <h5>0 days</h5>
                     </div>
@@ -287,11 +290,12 @@ export default {
                     <div class="col time-box">
                         <h5>0 sec</h5>
                     </div>
+                    <div class="col"></div>
 
                 </div>
 
-            </div>
-        </div>
+            <!-- </div>
+        </div> -->
         <div class="row prod-container">
                 <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
                     <div class="discount-card" @mouseover="handleHover(index)" @mouseleave="handleLeave(index)">
@@ -414,6 +418,7 @@ export default {
 
 .product-info {
     width: 100%;
+    max-height: 100%;
     background-color: #170F1F;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
@@ -454,6 +459,9 @@ export default {
 .prod-title{
     color: white;
     padding: 1rem;
+    white-space: nowrap;
+    overflow: hidden;            
+    text-overflow: ellipsis; 
 }
 
 //price 
