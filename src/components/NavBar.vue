@@ -3,32 +3,6 @@ export default {
   name: 'NavBar',
   data() {
     return {
-      pages: [
-        {
-          page: 'Home',
-          url: '#'
-        },
-        {
-          page: 'Shop',
-          url: '#'
-        },
-        {
-          page: 'Blog',
-          url: '#'
-        },
-        {
-          page: 'Media',
-          url: '#'
-        },
-        {
-          page: 'ShortCode',
-          url: '#'
-        },
-        {
-          page: 'Features',
-          url: '#'
-        }
-      ],
       iconpage: [
         {
           url: '#',
@@ -49,56 +23,6 @@ export default {
 </script>
 
 <template>
-  <!-- <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <div>
-        <a class="navbar-brand d-none d-lg-block" href="#">
-          <img src="/img/mob-logo.png" alt="" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarText"
-        >
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li>home</li>
-            <li>about</li>
-            <li>jhya</li>
-          </ul>
-        </div>
-     
-      </div>
-
-      <div class="lista-nav">
-        <ul class="d-flex">
-          <li v-for="(element, i) in pages" :key="i" class="d-none d-lg-block">
-            {{ element.page }}
-          </li>
-        </ul>
-      </div>
-      <div class="icone">
-        <ul class="list-unstyled d-flex text-center mt-3">
-          <li
-            class="me-3 d-none d-lg-inline"
-            v-for="(icons, index) in iconpage"
-            :key="index"
-          >
-            <i :class="icons.icon"> </i>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <div
@@ -124,35 +48,30 @@ export default {
             aria-label="Close"
           ></button>
         </div>
-        <div class="offcanvas-body">
-          <div class="lista-nav">
-            <ul class="d-flex">
-              <li
-                v-for="(element, i) in pages"
-                :key="i"
-                class="d-none d-lg-block"
-              >
-                {{ element.page }}
-              </li>
-            </ul>
-          </div>
-        </div>
+        <div class="offcanvas-body"></div>
       </div>
 
       <a class="navbar-brand d-none d-lg-block" href="#">
-        <img src="/img/mob-logo.png" alt="" />
+        <router-link :to="{ name: 'home' }" class="nav-link">
+          <img src="/img/mob-logo.png" alt="" />
+        </router-link>
       </a>
-      <!-- <div class="collapse navbar-collapse justify-content-end" id="navbarText">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li>home</li>
-          <li>about</li>
-          <li>jhya</li>
-        </ul>
-      </div> -->
       <div class="lista-nav">
         <ul class="d-flex">
-          <li v-for="(element, i) in pages" :key="i" class="d-none d-lg-block">
-            {{ element.page }}
+          <li class="d-none d-lg-block">
+            <router-link :to="{ name: 'home' }" class="nav-link">
+              Home
+            </router-link>
+          </li>
+          <li class="d-none d-lg-block">
+            <router-link :to="{ name: 'about' }" class="nav-link">
+              About Us
+            </router-link>
+          </li>
+          <li class="d-none d-lg-block">
+            <router-link :to="{ name: 'contact' }" class="nav-link">
+              Contact Us
+            </router-link>
           </li>
         </ul>
       </div>
