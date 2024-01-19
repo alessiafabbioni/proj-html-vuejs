@@ -362,14 +362,18 @@ export default {
         background-color: #f8a900;
         color: black;
         font-weight: 600;
+        border-radius: 12px;
+        padding: 10px;
+        text-align: center;
     }
 
     h3 {
         color: white;
         font-weight: 600;
+        text-align: center;
     }
 
-    }
+}
 
 .special-car {
     margin: 30px 0;
@@ -572,8 +576,12 @@ export default {
         right: 5%;
         background-color: #f8a900;
         color: #170F1F;
+        padding: 10px;
+        border-radius: 12px;
     }
 }
+
+
 
 //pic zoom
 
