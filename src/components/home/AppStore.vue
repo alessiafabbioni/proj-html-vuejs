@@ -189,6 +189,20 @@ export default {
                                 <span class="prod-price">$ {{ product.price }}</span>
                             </div>
                         </div>
+                        <div class="icon-slider row">
+                            <div class="col">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </div>
+                            <div class="col">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div class="col">
+                                <i class="fa-solid fa-maximize"></i>
+                            </div>
+                            <div class="col">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>        
              <!-- sezione frecce (prev. next) -->
@@ -368,6 +382,34 @@ export default {
     background-color: #170F1F;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
+    position: relative;
+
+    //slider icone
+
+    .icon-slider {
+        color: white;
+        position: absolute;
+        bottom: 0;
+        left: 12px;
+        text-align: center;
+        width: 100%;
+        border: solid 1px #342C3D;
+        padding: 1rem;
+        background-color: #170F1F;
+        display: none;
+        transition: transform 2s ease-in-out;
+    }
+
+    &:hover .icon-slider{
+        transform: translateY(0);
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+    }
+
+    i:hover {
+        color: #f8a900;
+    }
 }
 .checked {
     color: #f8a900;
@@ -514,5 +556,7 @@ export default {
     transition: transform 5s; 
     }
 }
+
+
 
 </style>
