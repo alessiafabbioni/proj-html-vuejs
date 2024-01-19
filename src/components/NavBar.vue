@@ -49,59 +49,67 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid">
-    <div class="container elementi-navbar p-3">
-      <div class="row">
-        <div class="col-lg-2 logo justify-content-center">
-          <router-link :to="{ name: 'about' }" class="nav-link">
-            <img src="/img/mob-logo.png" alt="" />
-          </router-link>
-        </div>
-        <div class="lista-nav col-lg-6">
-          <ul class="d-flex">
-            <li v-for="(element, i) in pages" :key="i" class="">
-              {{ element.page }}
-            </li>
-          </ul>
-        </div>
-        <div class="icone col-lg-4 d-flex justify-content-end align-items-end">
-          <ul class="d-flex">
-            <i
-              v-for="(icons, index) in iconpage"
-              :key="index"
-              :class="icons.icon"
-            ></i>
-          </ul>
-        </div>
+  <nav class="navbar">
+    <div class="container">
+      <div>
+        <a class="navbar-brand" href="#">
+          <img src="/img/mob-logo.png" alt="" />
+        </a>
+        <!-- <a class="navbar-brand d-none d-lg-inline" href="#">
+          <img src="img/logo.svg" alt="" width="130" height="" />
+        </a> -->
+      </div>
+
+      <div class="lista-nav">
+        <ul class="d-flex">
+          <li v-for="(element, i) in pages" :key="i" class="d-none d-lg-block">
+            {{ element.page }}
+          </li>
+        </ul>
+      </div>
+      <div class="icone">
+        <ul class="list-unstyled d-flex text-center mt-3">
+          <li
+            class="me-3 d-none d-lg-inline"
+            v-for="(icons, index) in iconpage"
+            :key="index"
+          >
+            <i :class="icons.icon"> </i>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <style lang="scss" scoped>
 @use 'src/styles/partials/_variables.scss' as *;
 @use 'src/styles/partials/_mixins.scss' as *;
-.container-fluid {
-  border-bottom: solid #241b2e 1px;
+.navbar {
   background-color: #1d1427;
-  color: white;
-  font-weight: bold;
-  .lista-nav {
-    ul {
-      list-style: none;
-      gap: 60px;
-    }
-  }
-  .icone {
-    font-size: 20px;
+  .container {
+    background-color: #1d1427;
 
-    ul {
-      gap: 55px;
+    color: white;
+    font-weight: bold;
+    .lista-nav {
+      ul {
+        list-style: none;
+        gap: 30px;
+        font-size: 15px;
+      }
+    }
+    .icone {
+      font-size: 20px;
+
+      ul {
+        gap: 40px;
+      }
     }
   }
-}
-ul :hover {
-  cursor: pointer;
-  color: #f9aa01;
+  ul :hover {
+    cursor: pointer;
+    color: #f9aa01;
+  }
 }
 </style>
