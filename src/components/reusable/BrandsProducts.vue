@@ -45,10 +45,10 @@ export default {
 
         //funzione per far funzionare lo slider
         nextBrand() {
-            if (4 + this.currentIndex + 1 < this.brands.length) {
+            if (5 + this.currentIndex < this.brands.length) {
                 this.currentIndex += 1;
         
-            } else if (4 + this.currentIndex + 1 === this.brands.length) {
+            } else if (5 + this.currentIndex === this.brands.length) {
                 this.currentIndex = 0;
             }
 

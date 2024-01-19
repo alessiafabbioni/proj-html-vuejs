@@ -18,7 +18,7 @@ export default {
   <main>
     <router-view></router-view>
   </main>
-  <BrandsProducts/>
+  <!-- <BrandsProducts/> -->
   <AppFooter/>
 
 </template>

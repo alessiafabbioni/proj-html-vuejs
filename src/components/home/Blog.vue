@@ -1,6 +1,11 @@
 <script>
+import BrandsProducts from '../reusable/BrandsProducts.vue'
+
 export default {
     name: 'Blog',
+    components: {
+        BrandsProducts,
+  },
     data() {
         return {
         currentIndex: 0,
@@ -132,6 +137,7 @@ export default {
         </div>
 
     </section>
+    <BrandsProducts/>
 </template>
 
 <style lang="scss" scoped>
