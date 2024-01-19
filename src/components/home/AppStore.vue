@@ -373,7 +373,7 @@ export default {
         text-align: center;
     }
 
-    }
+}
 
 .special-car {
     margin: 30px 0;

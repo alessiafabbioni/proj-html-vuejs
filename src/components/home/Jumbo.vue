@@ -76,6 +76,8 @@ export default {
         h4 {
             background-color: #F9AA02;
             padding: 10px 5px;
+            border-radius: 12px;
+            text-align: center;
         }
 
         .ms-button {
