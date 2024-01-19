@@ -39,17 +39,23 @@ export default {
         }
         },
 
+
+
         prevSlide() {
         if (this.currentIndex > 0) {
             this.currentIndex -= 4;
         }
         },
 
+
+
         //funzione per orchestrare i rating dei prodotti
         getStarClass(index, rating) {
         const roundedRating = Math.round(rating * 2) / 2;
         return index + 0.5 <= roundedRating ? 'checked' : '';
         },
+
+
 
         //funzinone per filtrare i prodotti
         filterProducts(category) {
@@ -66,10 +72,14 @@ export default {
         this.currentIndex = 0;
         },
 
+
+
         //impostazioni di filtro di default
         setDefaultFilter() {
         this.filterProducts('featured');
         },
+
+
 
         //calcolo dello sconto sul prodotto
         calculateDiscountPercentage(originalPrice, discountedPrice) {
@@ -77,8 +87,29 @@ export default {
         return discountPercentage.toFixed(2);
         },
 
+
+        //transizione con immagine randomica
+        handleHover(index) {
+        
+            // Save the original image URL before updating
+            this.store.filteredProducts[index].originalImage = this.store.filteredProducts[index].image;
+
+            // Generate a random index to select a different image from the array
+            const randomIndex = Math.floor(Math.random() * this.store.products.length);
+
+            // Update the image of the product at the specified index
+            this.store.filteredProducts[index].image = this.store.products[randomIndex].image;
+            },
+
+        handleLeave(index) {
+        
+            // Reset the image to the original one when leaving the hover
+            this.store.filteredProducts[index].image = this.store.filteredProducts[index].originalImage;
+
     
-    },
+        },
+        },
+
     mounted() {
         this.setDefaultFilter();
     },
@@ -169,7 +200,7 @@ export default {
         </div>
         <div class="row prod-container">
                 <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                    <div class="discount-card">
+                    <div class="discount-card" @mouseover="handleHover(index)" @mouseleave="handleLeave(index)">
                         <img class=" card-promo " :src="product.image" :alt="product.name">
                         <div class="discount-flag" v-if="product.discounted !== null">
                             <span>{{ calculateDiscountPercentage(product.price, product.discounted) }}% off</span>
@@ -263,7 +294,7 @@ export default {
         </div>
         <div class="row prod-container">
                 <div v-for="(product, index) in displayedProducts" :key="index" class="col-lg-3 col-md-4 col-sm-6 column-gap-5">
-                    <div class="discount-card">
+                    <div class="discount-card" @mouseover="handleHover(index)" @mouseleave="handleLeave(index)">
                         <img class=" card-promo " :src="product.image" :alt="product.name">
                         <div class="discount-flag" v-if="product.discounted !== null">
                             <span>{{ calculateDiscountPercentage(product.price, product.discounted) }}% off</span>
