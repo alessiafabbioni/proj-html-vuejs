@@ -35,7 +35,7 @@ export default {
   computed: {
 
             displayedBrand() {
-                    console.log(this.currentIndex)
+                    console.log('displayedBrand', this.currentIndex, this.currentIndex + this.brands.length - 1);
                     return this.brands.slice(this.currentIndex, this.currentIndex + this.brands.length -1);
 
             },
@@ -47,6 +47,7 @@ export default {
         nextBrand() {
             if (5 + this.currentIndex < this.brands.length) {
                 this.currentIndex += 1;
+               
         
             } else if (5 + this.currentIndex === this.brands.length) {
                 this.currentIndex = 0;
@@ -56,8 +57,10 @@ export default {
         prevBrand() {
             if (this.currentIndex > 0) {
                 this.currentIndex -= 1;
-            }else if (this.currentIndex === 0) {
-                this.currentIndex = this.brands.length - this.brands.length -1;
+
+            } else if (this.currentIndex === 0) {
+                this.currentIndex += 1;
+
             }
         },
 },
@@ -104,6 +107,7 @@ export default {
       justify-content: space-between;
       align-items: center;
       padding-right: 50px;
+      overflow: hidden;
     }
 
     .arrow {
